@@ -1,0 +1,9 @@
+{
+	"url": "http://wc-e2e.dev",
+	"users": {
+		"admin": {
+			"username": "admin",
+			"password": "password"
+		}
+	}
+}

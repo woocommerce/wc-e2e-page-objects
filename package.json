@@ -1,0 +1,62 @@
+{
+  "name": "wc-e2e-page-objects",
+  "version": "0.1.0",
+  "description": "WooCommerce Page Objects to be used on end-to-end tests with Selenium WebDriver",
+  "main": "./lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "test": "cross-env NODE_CONFIG_DIR='./test/config' BABEL_ENV=commonjs mocha --compilers js:babel-register --recursive",
+    "cover": "cross-env BABEL_ENV=commonjs istanbul cover _mocha -- --compilers js:babel-register --recursive",
+    "lint": "eslint src test",
+    "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "pre-publish": "npm run clean && npm run lint && npm run test && npm run build"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woocommerce/wc-e2e-page-objects.git"
+  },
+  "keywords": [
+    "WordPress",
+    "wp",
+    "page-objects",
+    "selenium",
+    "webdriver"
+  ],
+  "author": "WooCommerce",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/woocommerce/wc-e2e-page-objects"
+  },
+  "homepage": "https://github.com/woocommerce/wc-e2e-page-objects",
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "wp-e2e-page-objects": "^0.3.1",
+    "wp-e2e-webdriver": "^0.7.0"
+  },
+  "devDependencies": {
+    "config": "^1.24.0",
+    "babel": "^6.5.2",
+    "babel-cli": "^6.14.0",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-2": "^6.13.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "cross-env": "^3.0.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-wpcalypso": "^0.6.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "eslint-plugin-wpcalypso": "^3.0.2",
+    "istanbul": "^1.0.0-alpha",
+    "mocha": "^3.0.2",
+    "rimraf": "^2.5.4"
+  }
+}
