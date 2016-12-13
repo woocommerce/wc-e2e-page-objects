@@ -10,10 +10,12 @@ import { Page } from 'wp-e2e-page-objects';
  */
 import ComponentCartTotals from '../components/component-cart-totals';
 import ComponentCartItem from '../components/component-cart-item';
+import CheckoutPage from './checkout-page';
 
 const CART_EMPTY_SELECTOR = By.css( '.cart-empty' );
 const RETURN_TO_SHOP_SELECTOR = By.css( '.return-to-shop' );
 const UPDATE_CART_SELECTOR = By.css( 'input[name="update_cart"]' );
+const PROCEED_TO_CHECKOUT_SELECTOR = By.css( '.checkout-button' );
 
 const defaultArgs = {
 	components: {
@@ -60,5 +62,15 @@ export default class CartPage extends Page {
 			this.driver,
 			By.xpath( '//div[@class="woocommerce-message" and contains(text(), "Cart updated")]' )
 		);
+	}
+
+	hasSubtotal( subtotal ) {
+		return this.components.cartTotals.hasSubtotal( subtotal );
+	}
+
+	checkout() {
+		helper.clickWhenClickable( this.driver, PROCEED_TO_CHECKOUT_SELECTOR );
+
+		return new CheckoutPage( this.driver, { visit: false } );
 	}
 }
