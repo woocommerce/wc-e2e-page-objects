@@ -45,3 +45,38 @@ export function scrollDown( driver, waitMsToScroll = 2000 ) {
 
 	driver.sleep( waitMsToScroll );
 }
+
+export function select2Option( driver, selector, option ) {
+	helper.clickWhenClickable( driver, selector );
+
+	const optionSelector = By.xpath( `//div[contains(@class, "select2-result-label") and contains(text(), "${ option }")]` );
+	return helper.clickWhenClickable( driver, optionSelector );
+}
+
+export function select2OptionWithSearch( driver, selector, keyword, option ) {
+	helper.waitTillPresentAndDisplayed( driver, selector );
+	helper.clickWhenClickable( driver, selector );
+
+	// Wait till search results visible before typing the keyword.
+	helper.waitTillPresentAndDisplayed( driver, By.css( '.select2-results' ) );
+
+	const searchSelector = By.css( 'input.select2-input.select2-focused' );
+	helper.setWhenSettable( driver, searchSelector, keyword );
+
+	const optionSelector = By.xpath( `//div[contains(@class, "select2-result-label") and contains(.,"${ option }")]` );
+	return helper.clickWhenClickable( driver, optionSelector );
+}
+
+export function setSelect2WithSearch( driver, selector, keyword, option ) {
+	helper.waitTillPresentAndDisplayed( driver, selector );
+	helper.clickWhenClickable( driver, selector );
+
+	// Wait till search results visible before typing the keyword.
+	helper.waitTillPresentAndDisplayed( driver, By.css( '.select2-results' ) );
+
+	const searchSelector = By.css( 'input.select2-input.select2-focused' );
+	helper.setWhenSettable( driver, searchSelector, keyword );
+
+	const optionSelector = By.xpath( `//div[contains(@class, "select2-result-label") and contains(.,"${ option }")]` );
+	return helper.clickWhenClickable( driver, optionSelector );
+}
