@@ -38,6 +38,16 @@ export function scrollUp( driver, waitMsToScroll = 2000 ) {
 	driver.sleep( waitMsToScroll );
 }
 
+export function mouseMoveTo( driver, selector ) {
+	return driver.actions().
+		mouseMove( driver.findElement( selector ) ).
+		perform().then( () => {
+			return true;
+		}, () => {
+			return false;
+		} );
+}
+
 export function scrollDown( driver, waitMsToScroll = 2000 ) {
 	driver.actions().
 		sendKeys( Key.PAGE_DOWN ).
