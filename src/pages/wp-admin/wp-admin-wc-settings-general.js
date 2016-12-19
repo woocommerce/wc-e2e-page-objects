@@ -32,7 +32,7 @@ const defaultArgs = {
 	visit: true,
 };
 
-export default class WPAdminSettingsGeneral extends WPAdminWCSettings {
+export default class WPAdminWCSettingsGeneral extends WPAdminWCSettings {
 	constructor( driver, args = {} ) {
 		args = Object.assign( defaultArgs, args );
 		super( driver, args );
