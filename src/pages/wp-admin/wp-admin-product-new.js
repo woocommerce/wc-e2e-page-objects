@@ -1,23 +1,10 @@
 /**
- * External dependencies
- */
-import { WPAdminPostEdit } from 'wp-e2e-page-objects';
-
-/**
  * Internal dependencies
  */
-import ComponentMetaBoxProductData from '../../components/wp-admin/component-meta-box-product-data';
+import WPAdminProductEdit from './wp-admin-product-edit';
 
-export default class WPAdminProductNew extends WPAdminPostEdit {
+export default class WPAdminProductNew extends WPAdminProductEdit {
 	constructor( driver, args = {} ) {
-		args = Object.assign(
-			{
-				components: {
-					metaBoxProductData: ComponentMetaBoxProductData
-				}
-			},
-			args
-		);
 		super( driver, args );
 	}
 }
