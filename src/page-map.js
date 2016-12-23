@@ -12,6 +12,9 @@ import CheckoutPage from './pages/checkout-page';
 import WPAdminProductEdit from './pages/wp-admin/wp-admin-product-edit';
 import WPAdminProductNew from './pages/wp-admin/wp-admin-product-new';
 import WPAdminProducts from './pages/wp-admin/wp-admin-products';
+import WPAdminOrderEdit from './pages/wp-admin/wp-admin-order-edit';
+import WPAdminOrderNew from './pages/wp-admin/wp-admin-order-new';
+import WPAdminOrders from './pages/wp-admin/wp-admin-orders';
 import WPAdminWCSettingsGeneral from './pages/wp-admin/wp-admin-wc-settings-general';
 import WPAdminWCSettingsCheckout from './pages/wp-admin/wp-admin-wc-settings-checkout';
 import WPAdminWCSettingsCheckoutBACS from './pages/wp-admin/wp-admin-wc-settings-checkout-bacs';
@@ -43,6 +46,18 @@ export const PAGE = Object.assign(
 		},
 		WP_ADMIN_EDIT_PRODUCT: {
 			object: WPAdminProductEdit,
+			path: '/wp-admin/post.php?post=%s&action=edit'
+		},
+		WP_ADMIN_ORDERS: {
+			object: WPAdminOrders,
+			path: '/wp-admin/edit.php?post_type=shop_order'
+		},
+		WP_ADMIN_NEW_ORDER: {
+			object: WPAdminOrderNew,
+			path: '/wp-admin/post-new.php?post_type=shop_order'
+		},
+		WP_ADMIN_EDIT_ORDER: {
+			object: WPAdminOrderEdit,
 			path: '/wp-admin/post.php?post=%s&action=edit'
 		},
 		WP_ADMIN_WC_SETTINGS_GENERAL: {
