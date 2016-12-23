@@ -25,6 +25,10 @@ export default class StoreOwnerFlow extends UserFlow {
 		return this.open( PAGE.WP_ADMIN_NEW_ORDER );
 	}
 
+	openNewCoupon() {
+		return this.open( PAGE.WP_ADMIN_NEW_COUPON );
+	}
+
 	openGeneralSettings() {
 		return this.open( PAGE.WP_ADMIN_WC_SETTINGS_GENERAL );
 	}

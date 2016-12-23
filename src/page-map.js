@@ -15,6 +15,9 @@ import WPAdminProducts from './pages/wp-admin/wp-admin-products';
 import WPAdminOrderEdit from './pages/wp-admin/wp-admin-order-edit';
 import WPAdminOrderNew from './pages/wp-admin/wp-admin-order-new';
 import WPAdminOrders from './pages/wp-admin/wp-admin-orders';
+import WPAdminCouponEdit from './pages/wp-admin/wp-admin-coupon-edit';
+import WPAdminCouponNew from './pages/wp-admin/wp-admin-coupon-new';
+import WPAdminCoupons from './pages/wp-admin/wp-admin-coupons';
 import WPAdminWCSettingsGeneral from './pages/wp-admin/wp-admin-wc-settings-general';
 import WPAdminWCSettingsCheckout from './pages/wp-admin/wp-admin-wc-settings-checkout';
 import WPAdminWCSettingsCheckoutBACS from './pages/wp-admin/wp-admin-wc-settings-checkout-bacs';
@@ -58,6 +61,18 @@ export const PAGE = Object.assign(
 		},
 		WP_ADMIN_EDIT_ORDER: {
 			object: WPAdminOrderEdit,
+			path: '/wp-admin/post.php?post=%s&action=edit'
+		},
+		WP_ADMIN_COUPONS: {
+			object: WPAdminCoupons,
+			path: '/wp-admin/edit.php?post_type=shop_coupon'
+		},
+		WP_ADMIN_NEW_COUPON: {
+			object: WPAdminCouponNew,
+			path: '/wp-admin/post-new.php?post_type=shop_coupon'
+		},
+		WP_ADMIN_EDIT_COUPON: {
+			object: WPAdminCouponEdit,
 			path: '/wp-admin/post.php?post=%s&action=edit'
 		},
 		WP_ADMIN_WC_SETTINGS_GENERAL: {
