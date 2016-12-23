@@ -17,16 +17,16 @@ const assert = chai.assert;
 let manager;
 let driver;
 
-test.before( 'Setup browser', function() {
-	this.timeout( config.get( 'startBrowserTimeoutMs' ) );
-
-	manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
-	driver = manager.getDriver();
-
-	helper.clearCookiesAndDeleteLocalStorage( driver );
-} );
-
 test.describe( 'Test cart page', function() {
+	test.before( 'Setup browser', function() {
+		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
+
+		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
+		driver = manager.getDriver();
+
+		helper.clearCookiesAndDeleteLocalStorage( driver );
+	} );
+
 	this.timeout( config.get( 'mochaTimeoutMs' ) );
 
 	test.it( 'Should displays no item in the cart', () => {
@@ -109,8 +109,8 @@ test.describe( 'Test cart page', function() {
 			'Order review in checkout page is not displayed'
 		);
 	} );
-} );
 
-test.after( 'Quit browser', () => {
-	manager.quitBrowser();
+	test.after( 'Quit browser', () => {
+		manager.quitBrowser();
+	} );
 } );

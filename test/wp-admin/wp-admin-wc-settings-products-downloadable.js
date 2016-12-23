@@ -19,16 +19,16 @@ const assert = chai.assert;
 let manager;
 let driver;
 
-test.before( 'Setup browser', function() {
-	this.timeout( config.get( 'startBrowserTimeoutMs' ) );
-
-	manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
-	driver = manager.getDriver();
-
-	helper.clearCookiesAndDeleteLocalStorage( driver );
-} );
-
 test.describe( 'WooCommerce Products > Downloadable Products Settings', function() {
+	test.before( 'Setup browser', function() {
+		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
+
+		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
+		driver = manager.getDriver();
+
+		helper.clearCookiesAndDeleteLocalStorage( driver );
+	} );
+
 	this.timeout( config.get( 'mochaTimeoutMs' ) );
 
 	test.before( 'Login', () => {
@@ -55,8 +55,8 @@ test.describe( 'WooCommerce Products > Downloadable Products Settings', function
 		settings.saveChanges();
 		assert.eventually.ok( settings.hasNotice( 'Your settings have been saved.' ) );
 	} );
-} );
 
-test.after( 'Quit browser', () => {
-	manager.quitBrowser();
+	test.after( 'Quit browser', () => {
+		manager.quitBrowser();
+	} );
 } );

@@ -18,16 +18,16 @@ const assert = chai.assert;
 let manager;
 let driver;
 
-test.before( 'Setup browser', function() {
-	this.timeout( config.get( 'startBrowserTimeoutMs' ) );
-
-	manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
-	driver = manager.getDriver();
-
-	helper.clearCookiesAndDeleteLocalStorage( driver );
-} );
-
 test.describe( 'Add New Order Page', function() {
+	test.before( 'Setup browser', function() {
+		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
+
+		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
+		driver = manager.getDriver();
+
+		helper.clearCookiesAndDeleteLocalStorage( driver );
+	} );
+
 	this.timeout( config.get( 'mochaTimeoutMs' ) );
 
 	test.it( 'can create new order', () => {
@@ -52,8 +52,8 @@ test.describe( 'Add New Order Page', function() {
 		const orderNotes = orderPage.components.metaBoxOrderNotes;
 		assert.eventually.ok( orderNotes.hasNote( 'Order status changed from Pending Payment to Processing.' ) );
 	} );
-} );
 
-test.after( 'Quit browser', () => {
-	manager.quitBrowser();
+	test.after( 'Quit browser', () => {
+		manager.quitBrowser();
+	} );
 } );

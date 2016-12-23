@@ -26,16 +26,16 @@ const storeOwnerFlowArgs = {
 let manager;
 let driver;
 
-test.before( 'Setup browser', function() {
-	this.timeout( config.get( 'startBrowserTimeoutMs' ) );
-
-	manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
-	driver = manager.getDriver();
-
-	helper.clearCookiesAndDeleteLocalStorage( driver );
-} );
-
 test.describe( 'Checkout Page', function() {
+	test.before( 'Setup browser', function() {
+		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
+
+		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
+		driver = manager.getDriver();
+
+		helper.clearCookiesAndDeleteLocalStorage( driver );
+	} );
+
 	this.timeout( config.get( 'mochaTimeoutMs' ) );
 
 	test.it( 'should displays cart items in order review', () => {
@@ -158,8 +158,8 @@ test.describe( 'Checkout Page', function() {
 			orderReceivedPage.hasText( 'Order Received' )
 		);
 	} );
-} );
 
-test.after( 'Quit browser', () => {
-	manager.quitBrowser();
+	test.after( 'Quit browser', () => {
+		manager.quitBrowser();
+	} );
 } );

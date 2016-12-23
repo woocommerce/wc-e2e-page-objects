@@ -18,16 +18,16 @@ const assert = chai.assert;
 let manager;
 let driver;
 
-test.before( 'Setup browser', function() {
-	this.timeout( config.get( 'startBrowserTimeoutMs' ) );
-
-	manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
-	driver = manager.getDriver();
-
-	helper.clearCookiesAndDeleteLocalStorage( driver );
-} );
-
 test.describe( 'Add New Coupon Page', function() {
+	test.before( 'Setup browser', function() {
+		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
+
+		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
+		driver = manager.getDriver();
+
+		helper.clearCookiesAndDeleteLocalStorage( driver );
+	} );
+
 	this.timeout( config.get( 'mochaTimeoutMs' ) );
 
 	test.it( 'can create new coupon', () => {
@@ -51,8 +51,8 @@ test.describe( 'Add New Coupon Page', function() {
 
 		assert.eventually.ok( couponPage.hasNotice( 'Coupon updated.' ) );
 	} );
-} );
 
-test.after( 'Quit browser', () => {
-	manager.quitBrowser();
+	test.after( 'Quit browser', () => {
+		manager.quitBrowser();
+	} );
 } );
