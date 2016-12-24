@@ -27,7 +27,7 @@ let manager;
 let driver;
 
 test.describe( 'Checkout Page', function() {
-	test.before( 'Setup browser', function() {
+	test.before( 'open browser', function() {
 		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
 
 		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
@@ -55,7 +55,7 @@ test.describe( 'Checkout Page', function() {
 		assert.eventually.ok( orderReview.hasTotal( '$37.95' ) );
 	} );
 
-	test.it( 'allows to choose available payment methods', () => {
+	test.it( 'allows customer to choose available payment methods', () => {
 		// Make sure payment method is set in setting.
 		const storeOwner = new StoreOwnerFlow( driver, storeOwnerFlowArgs );
 		storeOwner.enableBACS();
@@ -73,7 +73,7 @@ test.describe( 'Checkout Page', function() {
 		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'Cash on Delivery' ) );
 	} );
 
-	test.it( 'allows to fill billing details', () => {
+	test.it( 'allows customer to fill billing details', () => {
 		// Sets selling location to all countries to allow customer sets billing
 		// country.
 		const storeOwner = new StoreOwnerFlow( driver, storeOwnerFlowArgs );
@@ -102,7 +102,7 @@ test.describe( 'Checkout Page', function() {
 		assert.eventually.ok( billingDetails.setZip( '94107' ) );
 	} );
 
-	test.it( 'allows to fill shipping details', () => {
+	test.it( 'allows customer to fill shipping details', () => {
 		const guest = new GuestCustomerFlow( driver, { baseUrl: config.get( 'url' ) } );
 		guest.fromShopAddProductsToCart( 'Flying Ninja', 'Happy Ninja' );
 
@@ -159,7 +159,7 @@ test.describe( 'Checkout Page', function() {
 		);
 	} );
 
-	test.after( 'Quit browser', () => {
+	test.after( 'quit browser', () => {
 		manager.quitBrowser();
 	} );
 } );

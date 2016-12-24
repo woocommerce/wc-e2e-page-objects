@@ -19,7 +19,7 @@ let manager;
 let driver;
 
 test.describe( 'Add New Order Page', function() {
-	test.before( 'Setup browser', function() {
+	test.before( 'open browser', function() {
 		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
 
 		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
@@ -53,7 +53,7 @@ test.describe( 'Add New Order Page', function() {
 		assert.eventually.ok( orderNotes.hasNote( 'Order status changed from Pending Payment to Processing.' ) );
 	} );
 
-	test.after( 'Quit browser', () => {
+	test.after( 'quit browser', () => {
 		manager.quitBrowser();
 	} );
 } );

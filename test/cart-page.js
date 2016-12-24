@@ -17,8 +17,8 @@ const assert = chai.assert;
 let manager;
 let driver;
 
-test.describe( 'Test cart page', function() {
-	test.before( 'Setup browser', function() {
+test.describe( 'Cart page', function() {
+	test.before( 'open browser', function() {
 		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
 
 		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
@@ -29,12 +29,12 @@ test.describe( 'Test cart page', function() {
 
 	this.timeout( config.get( 'mochaTimeoutMs' ) );
 
-	test.it( 'Should displays no item in the cart', () => {
+	test.it( 'should displays no item in the cart', () => {
 		const cartPage = new CartPage( driver, { url: manager.getPageUrl( '/cart' ) } );
 		assert.eventually.equal( cartPage.hasNoItem(), true );
 	} );
 
-	test.it( 'Should adds the product to the cart when "Add to cart" is clicked', () => {
+	test.it( 'should adds the product to the cart when "Add to cart" is clicked', () => {
 		const shopPage = new ShopPage( driver, { url: manager.getPageUrl( '/shop' ) } );
 		assert.eventually.equal( shopPage.addProductToCart( 'Flying Ninja' ), true );
 		assert.eventually.equal( shopPage.addProductToCart( 'Happy Ninja' ), true );
@@ -44,7 +44,7 @@ test.describe( 'Test cart page', function() {
 		assert.eventually.equal( cartPage.hasItem( 'Happy Ninja' ), true );
 	} );
 
-	test.it( 'Should increases item qty when "Add to cart" of the same product is clicked', () => {
+	test.it( 'should increases item qty when "Add to cart" of the same product is clicked', () => {
 		const shopPage = new ShopPage( driver, { url: manager.getPageUrl( '/shop' ) } );
 		assert.eventually.equal( shopPage.addProductToCart( 'Flying Ninja' ), true );
 
@@ -53,7 +53,7 @@ test.describe( 'Test cart page', function() {
 		assert.eventually.equal( cartPage.hasItem( 'Happy Ninja', { qty: 1 } ), true );
 	} );
 
-	test.it( 'Should updates qty when updated via qty input', () => {
+	test.it( 'should updates qty when updated via qty input', () => {
 		const cartPage = new CartPage( driver, { url: manager.getPageUrl( '/cart' ) } );
 		cartPage.getItem( 'Flying Ninja', { qty: 2 } ).setQty( 4 );
 		cartPage.update();
@@ -64,7 +64,7 @@ test.describe( 'Test cart page', function() {
 		assert.eventually.equal( cartPage.hasItem( 'Happy Ninja', { qty: 3 } ), true );
 	} );
 
-	test.it( 'Should remove the item from the cart when remove is clicked', () => {
+	test.it( 'should remove the item from the cart when remove is clicked', () => {
 		const cartPage = new CartPage( driver, { url: manager.getPageUrl( '/cart' ) } );
 		cartPage.getItem( 'Flying Ninja', { qty: 4 } ).remove();
 		cartPage.getItem( 'Happy Ninja', { qty: 3 } ).remove();
@@ -72,7 +72,7 @@ test.describe( 'Test cart page', function() {
 		assert.eventually.equal( cartPage.hasNoItem(), true );
 	} );
 
-	test.it( 'Should update subtotal in cart totals when adding product to the cart', () => {
+	test.it( 'should update subtotal in cart totals when adding product to the cart', () => {
 		const shopPage = new ShopPage( driver, { url: manager.getPageUrl( '/shop' ) } );
 		assert.eventually.equal( shopPage.addProductToCart( 'Flying Ninja' ), true );
 
@@ -99,7 +99,7 @@ test.describe( 'Test cart page', function() {
 		);
 	} );
 
-	test.it( 'Should go to the checkout page when "Proceed to Chcekout" is clicked', () => {
+	test.it( 'should go to the checkout page when "Proceed to Chcekout" is clicked', () => {
 		const cartPage = new CartPage( driver, { url: manager.getPageUrl( '/cart' ) } );
 		const checkoutPage = cartPage.checkout();
 
@@ -110,7 +110,7 @@ test.describe( 'Test cart page', function() {
 		);
 	} );
 
-	test.after( 'Quit browser', () => {
+	test.after( 'quit browser', () => {
 		manager.quitBrowser();
 	} );
 } );

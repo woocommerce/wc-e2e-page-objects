@@ -21,7 +21,7 @@ let manager;
 let driver;
 
 test.describe( 'Add New Product Page', function() {
-	test.before( 'Setup browser', function() {
+	test.before( 'open browser', function() {
 		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
 
 		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
@@ -32,7 +32,7 @@ test.describe( 'Add New Product Page', function() {
 
 	this.timeout( config.get( 'mochaTimeoutMs' ) );
 
-	test.before( 'Login', () => {
+	test.before( 'login', () => {
 		const wpLogin = new WPLogin( driver, { url: manager.getPageUrl( '/wp-login.php' ) } );
 		wpLogin.login( config.get( 'users.admin.username' ), config.get( 'users.admin.password' ) );
 	} );
@@ -129,7 +129,7 @@ test.describe( 'Add New Product Page', function() {
 		assert.eventually.ok( product.hasNotice( '1 product moved to the Trash.' ) );
 	} );
 
-	test.after( 'Quit browser', () => {
+	test.after( 'quit browser', () => {
 		manager.quitBrowser();
 	} );
 } );

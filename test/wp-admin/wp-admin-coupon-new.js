@@ -19,7 +19,7 @@ let manager;
 let driver;
 
 test.describe( 'Add New Coupon Page', function() {
-	test.before( 'Setup browser', function() {
+	test.before( 'open browser', function() {
 		this.timeout( config.get( 'startBrowserTimeoutMs' ) );
 
 		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
@@ -52,7 +52,7 @@ test.describe( 'Add New Coupon Page', function() {
 		assert.eventually.ok( couponPage.hasNotice( 'Coupon updated.' ) );
 	} );
 
-	test.after( 'Quit browser', () => {
+	test.after( 'quit browser', () => {
 		manager.quitBrowser();
 	} );
 } );
