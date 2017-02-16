@@ -15,7 +15,7 @@ const BASE_LOCATION_SELECTOR = By.xpath(
 	'/preceding-sibling::div[contains(@class, "wc-enhanced-select")]' +
 	'//b'
 );
-const SELLING_LOCATION_SELECTOR = By.css( '#s2id_woocommerce_allowed_countries .select2-choice b' );
+const SELLING_LOCATION_SELECTOR = By.css( '#woocommerce_allowed_countries' );
 const SELL_TO_SPECIFIC_COUNTRIES_SELECTOR = By.xpath(
 	'//select[@name="woocommerce_specific_allowed_countries[]"]' +
 	'/preceding-sibling::div[contains(@class, "wc-enhanced-select")]' +
@@ -43,7 +43,7 @@ export default class WPAdminWCSettingsGeneral extends WPAdminWCSettings {
 	}
 
 	selectSellingLocation( option ) {
-		return wcHelper.select2Option( this.driver, SELLING_LOCATION_SELECTOR, option );
+		return helper.selectOption( this.driver, SELLING_LOCATION_SELECTOR, option );
 	}
 
 	setSellToSpecificCountries( keyword, exactOption ) {

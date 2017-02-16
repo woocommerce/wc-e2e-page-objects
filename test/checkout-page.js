@@ -50,7 +50,7 @@ test.describe( 'Checkout Page', function() {
 		assert.eventually.ok( orderReview.hasItem( 'Flying Ninja', { qty: '1', total: '$12.00' } ) );
 		assert.eventually.ok( orderReview.hasItem( 'Happy Ninja', { qty: '1', total: '$18.00' } ) );
 		assert.eventually.ok( orderReview.hasSubtotal( '$30.00' ) );
-		assert.eventually.ok( orderReview.hasShipping( 'Flat Rate: $3.00' ) );
+		assert.eventually.ok( orderReview.hasShipping( '3.00' ) );
 		assert.eventually.ok( orderReview.hasTax( '$4.95' ) );
 		assert.eventually.ok( orderReview.hasTotal( '$37.95' ) );
 	} );
@@ -69,8 +69,8 @@ test.describe( 'Checkout Page', function() {
 		const checkoutPage = guest.openCheckout();
 		assert.eventually.ok( wcHelper.waitTillUIBlockNotPresent( driver ) );
 		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'PayPal' ) );
-		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'Direct Bank Transfer' ) );
-		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'Cash on Delivery' ) );
+		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'Direct bank transfer' ) );
+		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'Cash on delivery' ) );
 	} );
 
 	test.it( 'allows customer to fill billing details', () => {
@@ -78,7 +78,7 @@ test.describe( 'Checkout Page', function() {
 		// country.
 		const storeOwner = new StoreOwnerFlow( driver, storeOwnerFlowArgs );
 		const settings = storeOwner.openGeneralSettings();
-		settings.selectSellingLocation( 'Sell to All Countries' );
+		settings.selectSellingLocation( 'Sell to all countries' );
 		settings.saveChanges();
 		storeOwner.logout();
 
