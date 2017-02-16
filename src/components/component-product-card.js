@@ -16,7 +16,7 @@ export default class ComponentProductCard extends Component {
 	}
 
 	click() {
-		const expression = `//li[contains(@class, "type-product")]/a[h3[contains(text(), "${ this.productTitle }")]]`;
+		const expression = `//li[contains(@class, "type-product")]/a[h2[contains(text(), "${ this.productTitle }")]]`;
 		return helper.clickWhenClickable(
 			this.driver,
 			By.xpath( expression )
@@ -25,7 +25,7 @@ export default class ComponentProductCard extends Component {
 
 	addToCart() {
 		const expression =
-			`//li[contains(@class, "type-product") and a/h3[contains(text(), "${ this.productTitle }")]]` +
+			`//li[contains(@class, "type-product") and a/h2[contains(text(), "${ this.productTitle }")]]` +
 			'//a[contains(@class, "add_to_cart_button") and contains(@class, "ajax_add_to_cart")]'
 		;
 		helper.clickWhenClickable(
@@ -42,7 +42,7 @@ export default class ComponentProductCard extends Component {
 
 	_getViewCartSelector() {
 		return By.xpath(
-			`//li[contains(@class, "type-product") and a/h3[contains(text(), "${ this.productTitle }")]]` +
+			`//li[contains(@class, "type-product") and a/h2[contains(text(), "${ this.productTitle }")]]` +
 			'//a[contains(@class, "added_to_cart") and contains(@class, "wc-forward")]'
 		);
 	}
@@ -56,7 +56,7 @@ export default class ComponentProductCard extends Component {
 
 	selectOptions() {
 		const expression =
-			`//li[@class="type-product" and a//h3[contains(text(), "${ this.productTitle }")]]` +
+			`//li[@class="type-product" and a//h2[contains(text(), "${ this.productTitle }")]]` +
 			'//a[@class="add_to_cart_button"]'
 		;
 		return helper.clickWhenClickable(

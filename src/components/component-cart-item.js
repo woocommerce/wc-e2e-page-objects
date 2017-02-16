@@ -7,7 +7,7 @@ import { Component } from 'wp-e2e-page-objects';
 
 function getItemSelector( productTitle, args ) {
 	return By.xpath(
-		'//tr[@class="cart_item" and ' +
+		'//tr[contains(@class, "cart_item") and ' +
 			getProductColumnExpression( productTitle ) +
 			' and ' +
 			getQtyColumnExpression( args ) +
