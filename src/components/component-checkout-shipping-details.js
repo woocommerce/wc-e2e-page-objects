@@ -14,11 +14,11 @@ const SELECTOR = '.woocommerce-shipping-fields';
 const FIRST_NAME_SELECTOR = By.css( '#shipping_first_name' );
 const LAST_NAME_SELECTOR = By.css( '#shipping_last_name' );
 const COMPANY_SELECTOR = By.css( '#shipping_company' );
-const COUNTRY_SELECTOR = By.css( '#s2id_billing_country' );
+const COUNTRY_SELECTOR = By.css( '#shipping_country_field .select2-selection__arrow' );
 const ADDRESS_1_SELECTOR = By.css( '#shipping_address_1' );
 const ADDRESS_2_SELECTOR = By.css( '#shipping_address_2' );
 const CITY_SELECTOR = By.css( '#shipping_city' );
-const STATE_SELECTOR = By.css( '#s2id_billing_state' );
+const STATE_SELECTOR = By.css( '#shipping_state_field .select2-selection__arrow' );
 const ZIP_SELECTOR = By.css( '#shipping_postcode' );
 
 export default class ComponentCheckoutShippingDetails extends ComponentCheckout {

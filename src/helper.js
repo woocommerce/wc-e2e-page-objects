@@ -44,10 +44,10 @@ export function select2OptionWithSearch( driver, selector, keyword, option ) {
 	// Wait till search results visible before typing the keyword.
 	helper.waitTillPresentAndDisplayed( driver, By.css( '.select2-results' ) );
 
-	const searchSelector = By.css( 'input.select2-input.select2-focused' );
+	const searchSelector = By.css( 'input.select2-search__field' );
 	helper.setWhenSettable( driver, searchSelector, keyword );
 
-	const optionSelector = By.xpath( `//div[contains(@class, "select2-result-label") and contains(.,"${ option }")]` );
+	const optionSelector = By.xpath( `//li[contains(@class, "select2-results__option") and contains(.,"${ option }")]` );
 	return helper.clickWhenClickable( driver, optionSelector );
 }
 

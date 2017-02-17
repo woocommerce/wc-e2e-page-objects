@@ -16,11 +16,11 @@ const LAST_NAME_SELECTOR = By.css( '#billing_last_name' );
 const COMPANY_SELECTOR = By.css( '#billing_company' );
 const EMAIL_SELECTOR = By.css( '#billing_email' );
 const PHONE_SELECTOR = By.css( '#billing_phone' );
-const COUNTRY_SELECTOR = By.css( '#s2id_billing_country' );
+const COUNTRY_SELECTOR = By.css( '#select2-billing_country-container' );
 const ADDRESS_1_SELECTOR = By.css( '#billing_address_1' );
 const ADDRESS_2_SELECTOR = By.css( '#billing_address_2' );
 const CITY_SELECTOR = By.css( '#billing_city' );
-const STATE_SELECTOR = By.css( '#s2id_billing_state' );
+const STATE_SELECTOR = By.css( '#billing_state_field .select2-selection__arrow' );
 const ZIP_SELECTOR = By.css( '#billing_postcode' );
 
 export default class ComponentCheckoutBillingDetails extends ComponentCheckout {

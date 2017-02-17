@@ -148,14 +148,14 @@ test.describe( 'Checkout Page', function() {
 		billingDetails.setCity( 'San Francisco' );
 		billingDetails.selectState( 'cali', 'California' );
 		billingDetails.setZip( '94107' );
-		checkoutPage.selectPaymentMethod( 'Cash on Delivery' );
+		checkoutPage.selectPaymentMethod( 'Cash on delivery' );
 		checkoutPage.placeOrder();
 		wcHelper.waitTillUIBlockNotPresent( driver );
 
 		const orderReceivedPage = new CheckoutOrderReceivedPage( driver, { visit: false } );
 
 		assert.eventually.ok(
-			orderReceivedPage.hasText( 'Order Received' )
+			orderReceivedPage.hasText( 'Order received' )
 		);
 	} );
 
