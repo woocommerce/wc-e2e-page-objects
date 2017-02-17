@@ -33,7 +33,7 @@ export function waitTillAlertAccepted( driver, waitMs = 10000 ) {
 export function select2Option( driver, selector, option ) {
 	helper.clickWhenClickable( driver, selector );
 
-	const optionSelector = By.xpath( `//div[contains(@class, "select2-result-label") and contains(text(), "${ option }")]` );
+	const optionSelector = By.xpath( `//li[contains(@class, "select2-results__option") and contains(text(), "${ option }")]` );
 	return helper.clickWhenClickable( driver, optionSelector );
 }
 

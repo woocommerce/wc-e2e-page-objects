@@ -50,7 +50,7 @@ test.describe( 'Add New Order Page', function() {
 		assert.eventually.ok( orderData.hasOrderStatus( 'Processing' ) );
 
 		const orderNotes = orderPage.components.metaBoxOrderNotes;
-		assert.eventually.ok( orderNotes.hasNote( 'Order status changed from Pending Payment to Processing.' ) );
+		assert.eventually.ok( orderNotes.hasNote( 'Order status changed from Pending payment to Processing.' ) );
 	} );
 
 	test.after( 'quit browser', () => {

@@ -14,8 +14,8 @@ const METABOX_SELECTOR = By.css( '#woocommerce-order-data' );
 const ORDER_DATE_SELECTOR = By.css( '#order_date' );
 const ORDER_DATE_HOUR_SELECTOR = By.css( '#order_date_hour' );
 const ORDER_DATE_MINUTE_SELECTOR = By.css( '#order_date_minute' );
-const ORDER_STATUS_SELECTOR = By.css( '#s2id_order_status .select2-choice b' );
-const CUSTOMER_SELECTOR = By.css( '#s2id_customer_user .select2-choice b' );
+const ORDER_STATUS_SELECTOR = By.css( '.wc-order-status .select2-selection__arrow' );
+const CUSTOMER_SELECTOR = By.css( '.wc-customer-user .select2-selection__arrow' );
 
 export default class ComponentMetaBoxOrderData extends ComponentMetaBox {
 	constructor( driver ) {
@@ -28,8 +28,7 @@ export default class ComponentMetaBoxOrderData extends ComponentMetaBox {
 
 	hasOrderStatus( status ) {
 		const selector = By.xpath(
-			'//div[@id="s2id_order_status"]' +
-			`//span[contains(@class, "select2-chosen") and contains(., "${ status }")]`
+			`//span[@id="select2-order_status-container" and contains(., "${ status }")]`
 		);
 		return helper.isEventuallyPresentAndDisplayed( this.driver, selector );
 	}
