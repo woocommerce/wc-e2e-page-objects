@@ -64,8 +64,8 @@ test.describe( 'Checkout Page', function() {
 		const checkoutPage = guest.openCheckout();
 		assert.eventually.ok( wcHelper.waitTillUIBlockNotPresent( driver ) );
 		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'PayPal' ) );
-		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'Direct bank transfer' ) );
-		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'Cash on delivery' ) );
+		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'Direct Bank Transfer' ) );
+		assert.eventually.ok( checkoutPage.selectPaymentMethod( 'Cash on Delivery' ) );
 	} );
 
 	test.it( 'allows customer to fill billing details', () => {
@@ -143,7 +143,7 @@ test.describe( 'Checkout Page', function() {
 		billingDetails.setCity( 'San Francisco' );
 		billingDetails.selectState( 'cali', 'California' );
 		billingDetails.setZip( '94107' );
-		checkoutPage.selectPaymentMethod( 'Cash on delivery' );
+		checkoutPage.selectPaymentMethod( 'Cash on Delivery' );
 		checkoutPage.placeOrder();
 		wcHelper.waitTillUIBlockNotPresent( driver );
 
