@@ -10,17 +10,9 @@ import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 import * as wcHelper from '../../helper';
 import WPAdminWCSettings from './wp-admin-wc-settings';
 
-const BASE_LOCATION_SELECTOR = By.xpath(
-	'//select[@name="woocommerce_default_country"]' +
-	'/preceding-sibling::div[contains(@class, "wc-enhanced-select")]' +
-	'//b'
-);
-const SELLING_LOCATION_SELECTOR = By.css( '#woocommerce_allowed_countries' );
-const SELL_TO_SPECIFIC_COUNTRIES_SELECTOR = By.xpath(
-	'//select[@name="woocommerce_specific_allowed_countries[]"]' +
-	'/preceding-sibling::div[contains(@class, "wc-enhanced-select")]' +
-	'//input[contains(@class, "select2-input")]'
-);
+const BASE_LOCATION_SELECTOR = By.xpath( '//select[@name="woocommerce_default_country"]/following-sibling::span[contains(@class, "select2")]//span[contains(@class,"select2-selection__arrow")]' );
+const SELLING_LOCATION_SELECTOR = By.xpath( '//span[@id="select2-woocommerce_allowed_countries-container"]/following-sibling::span[contains(@class, "select2-selection__arrow")]' );
+const SELL_TO_SPECIFIC_COUNTRIES_SELECTOR = By.xpath( '//select[@name="woocommerce_specific_allowed_countries[]"]/following-sibling::span[contains(@class, "select2")]' );
 const ENABLE_TAXES_SELECTOR = By.css( '#woocommerce_calc_taxes' );
 const STORE_NOTICE_SELECTOR = By.css( '#woocommerce_demo_store' );
 const THOUSAND_SEPARATOR_SELECTOR = By.css( '#woocommerce_price_thousand_sep' );
@@ -43,7 +35,7 @@ export default class WPAdminWCSettingsGeneral extends WPAdminWCSettings {
 	}
 
 	selectSellingLocation( option ) {
-		return helper.selectOption( this.driver, SELLING_LOCATION_SELECTOR, option );
+		return wcHelper.select2Option( this.driver, SELLING_LOCATION_SELECTOR, option );
 	}
 
 	setSellToSpecificCountries( keyword, exactOption ) {

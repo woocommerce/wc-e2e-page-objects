@@ -44,7 +44,7 @@ test.describe( 'WooCommerce General Settings', function() {
 
 		// Set selling location to all countries first, so we can choose california
 		// as base location.
-		settings.selectSellingLocation( 'Sell to All Countries' );
+		settings.selectSellingLocation( 'Sell to all countries' );
 		settings.saveChanges();
 		assert.eventually.ok( settings.hasNotice( 'Your settings have been saved.' ) );
 
@@ -56,7 +56,7 @@ test.describe( 'WooCommerce General Settings', function() {
 		// Set selling location to specific countries first, so we can choose
 		// U.S as base location (without state). This will makes specific
 		// countries option appears.
-		settings.selectSellingLocation( 'Sell to Specific Countries' );
+		settings.selectSellingLocation( 'Sell to specific countries' );
 		settings.removeChoiceInSellToSpecificCountries( 'United States (US)' );
 		settings.setSellToSpecificCountries( 'united states', 'United States (US)' );
 		settings.saveChanges();
