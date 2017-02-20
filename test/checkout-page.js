@@ -127,7 +127,7 @@ test.describe( 'Checkout Page', function() {
 		// country.
 		const storeOwner = new StoreOwnerFlow( driver, storeOwnerFlowArgs );
 		const settings = storeOwner.openGeneralSettings();
-		settings.selectSellingLocation( 'Sell to All Countries' );
+		settings.selectSellingLocation( 'Sell to all countries' );
 		settings.saveChanges();
 		storeOwner.logout();
 
