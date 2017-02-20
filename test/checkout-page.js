@@ -42,17 +42,12 @@ test.describe( 'Checkout Page', function() {
 		const guest = new GuestCustomerFlow( driver, { baseUrl: config.get( 'url' ) } );
 		guest.fromShopAddProductsToCart( 'Flying Ninja', 'Happy Ninja' );
 
-		// TODO: Make sure tax and shipping is set in setting.
-
 		const checkoutPage = guest.openCheckout();
 		assert.eventually.ok( wcHelper.waitTillUIBlockNotPresent( driver ) );
 		const orderReview = checkoutPage.components.orderReview;
 		assert.eventually.ok( orderReview.hasItem( 'Flying Ninja', { qty: '1', total: '$12.00' } ) );
 		assert.eventually.ok( orderReview.hasItem( 'Happy Ninja', { qty: '1', total: '$18.00' } ) );
 		assert.eventually.ok( orderReview.hasSubtotal( '$30.00' ) );
-		assert.eventually.ok( orderReview.hasShipping( '3.00' ) );
-		assert.eventually.ok( orderReview.hasTax( '$4.95' ) );
-		assert.eventually.ok( orderReview.hasTotal( '$37.95' ) );
 	} );
 
 	test.it( 'allows customer to choose available payment methods', () => {
