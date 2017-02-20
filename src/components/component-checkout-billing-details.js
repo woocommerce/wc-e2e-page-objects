@@ -29,57 +29,57 @@ export default class ComponentCheckoutBillingDetails extends ComponentCheckout {
 	}
 
 	setFirstName( firstName ) {
-		wcHelper.mouseMoveTo( this.driver, FIRST_NAME_SELECTOR );
+		helper.mouseMoveTo( this.driver, FIRST_NAME_SELECTOR );
 		return helper.setWhenSettable( this.driver, FIRST_NAME_SELECTOR, firstName );
 	}
 
 	setLastName( lastName ) {
-		wcHelper.mouseMoveTo( this.driver, LAST_NAME_SELECTOR );
+		helper.mouseMoveTo( this.driver, LAST_NAME_SELECTOR );
 		return helper.setWhenSettable( this.driver, LAST_NAME_SELECTOR, lastName );
 	}
 
 	setCompany( company ) {
-		wcHelper.mouseMoveTo( this.driver, COMPANY_SELECTOR );
+		helper.mouseMoveTo( this.driver, COMPANY_SELECTOR );
 		return helper.setWhenSettable( this.driver, COMPANY_SELECTOR, company );
 	}
 
 	setEmail( email ) {
-		wcHelper.mouseMoveTo( this.driver, EMAIL_SELECTOR );
+		helper.mouseMoveTo( this.driver, EMAIL_SELECTOR );
 		return helper.setWhenSettable( this.driver, EMAIL_SELECTOR, email );
 	}
 
 	setPhone( phone ) {
-		wcHelper.mouseMoveTo( this.driver, PHONE_SELECTOR );
+		helper.mouseMoveTo( this.driver, PHONE_SELECTOR );
 		return helper.setWhenSettable( this.driver, PHONE_SELECTOR, phone );
 	}
 
 	selectCountry( keyword, option ) {
-		wcHelper.mouseMoveTo( this.driver, COUNTRY_SELECTOR );
+		helper.mouseMoveTo( this.driver, COUNTRY_SELECTOR );
 		return wcHelper.select2OptionWithSearch( this.driver, COUNTRY_SELECTOR, keyword, option );
 	}
 
 	setAddress1( addr ) {
-		wcHelper.mouseMoveTo( this.driver, ADDRESS_1_SELECTOR );
+		helper.mouseMoveTo( this.driver, ADDRESS_1_SELECTOR );
 		return helper.setWhenSettable( this.driver, ADDRESS_1_SELECTOR, addr );
 	}
 
 	setAddress2( addr ) {
-		wcHelper.mouseMoveTo( this.driver, ADDRESS_2_SELECTOR );
+		helper.mouseMoveTo( this.driver, ADDRESS_2_SELECTOR );
 		return helper.setWhenSettable( this.driver, ADDRESS_2_SELECTOR, addr );
 	}
 
 	setCity( city ) {
-		wcHelper.mouseMoveTo( this.driver, CITY_SELECTOR );
+		helper.mouseMoveTo( this.driver, CITY_SELECTOR );
 		return helper.setWhenSettable( this.driver, CITY_SELECTOR, city );
 	}
 
 	selectState( keyword, option ) {
-		wcHelper.mouseMoveTo( this.driver, STATE_SELECTOR );
+		helper.mouseMoveTo( this.driver, STATE_SELECTOR );
 		return wcHelper.select2OptionWithSearch( this.driver, STATE_SELECTOR, keyword, option );
 	}
 
 	setZip( zip ) {
-		wcHelper.mouseMoveTo( this.driver, ZIP_SELECTOR );
+		helper.mouseMoveTo( this.driver, ZIP_SELECTOR );
 		return helper.setWhenSettable( this.driver, ZIP_SELECTOR, zip );
 	}
 }

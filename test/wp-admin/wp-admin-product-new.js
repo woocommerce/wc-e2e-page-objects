@@ -11,7 +11,6 @@ import { WPLogin } from 'wp-e2e-page-objects';
 /**
  * Internal dependencies
  */
-import * as wcHelper from '../../src/helper';
 import { WPAdminProductNew } from '../../src/index';
 
 chai.use( chaiAsPromised );
@@ -118,9 +117,9 @@ test.describe( 'Add New Product Page', function() {
 
 		panelVaritions.saveChanges();
 
-		wcHelper.scrollUp( driver );
-		wcHelper.scrollUp( driver );
-		wcHelper.scrollUp( driver );
+		helper.scrollUp( driver );
+		helper.scrollUp( driver );
+		helper.scrollUp( driver );
 
 		product.publish();
 		assert.eventually.ok( product.hasNotice( 'Product published.' ) );

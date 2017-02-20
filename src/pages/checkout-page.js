@@ -8,7 +8,6 @@ import { Page } from 'wp-e2e-page-objects';
 /**
  * Internal dependencies
  */
-import * as wcHelper from '../helper';
 import ComponentCheckoutBillingDetails from '../components/component-checkout-billing-details';
 import ComponentCheckoutShippingDetails from '../components/component-checkout-shipping-details';
 import ComponentCheckoutOrderReview from '../components/component-checkout-order-review';
@@ -36,12 +35,12 @@ export default class CheckoutPage extends Page {
 	}
 
 	checkShipToDifferentAddress() {
-		wcHelper.mouseMoveTo( this.driver, SHIP_TO_DIFFERENT_ADDRESS_SELECTOR );
+		helper.mouseMoveTo( this.driver, SHIP_TO_DIFFERENT_ADDRESS_SELECTOR );
 		return helper.setCheckbox( this.driver, SHIP_TO_DIFFERENT_ADDRESS_SELECTOR );
 	}
 
 	uncheckShipToDifferentAddress() {
-		wcHelper.mouseMoveTo( this.driver, SHIP_TO_DIFFERENT_ADDRESS_SELECTOR );
+		helper.mouseMoveTo( this.driver, SHIP_TO_DIFFERENT_ADDRESS_SELECTOR );
 		return helper.unsetCheckbox( this.driver, SHIP_TO_DIFFERENT_ADDRESS_SELECTOR );
 	}
 

@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { By, Key } from 'selenium-webdriver';
+import { By } from 'selenium-webdriver';
 import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 
 const UI_BLOCK_SELECTOR = By.css( '.blockUI.blockOverlay' );
@@ -28,32 +28,6 @@ export function waitTillAlertAccepted( driver, waitMs = 10000 ) {
 			return false;
 		} );
 	}, waitMs, 'Time out waiting for alert to be accepted' );
-}
-
-export function scrollUp( driver, waitMsToScroll = 2000 ) {
-	driver.actions().
-		sendKeys( Key.PAGE_UP ).
-		perform();
-
-	driver.sleep( waitMsToScroll );
-}
-
-export function mouseMoveTo( driver, selector ) {
-	return driver.actions().
-		mouseMove( driver.findElement( selector ) ).
-		perform().then( () => {
-			return true;
-		}, () => {
-			return false;
-		} );
-}
-
-export function scrollDown( driver, waitMsToScroll = 2000 ) {
-	driver.actions().
-		sendKeys( Key.PAGE_DOWN ).
-		perform();
-
-	driver.sleep( waitMsToScroll );
 }
 
 export function select2Option( driver, selector, option ) {

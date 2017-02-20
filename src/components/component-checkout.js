@@ -2,11 +2,7 @@
  * External dependencies
  */
 import { Component } from 'wp-e2e-page-objects';
-
-/**
- * Internal dependencies
- */
-import * as wcHelper from '../helper';
+import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 
 export default class ComponentCheckout extends Component {
 	constructor( driver, selector ) {
@@ -14,6 +10,6 @@ export default class ComponentCheckout extends Component {
 	}
 
 	_mouseMoveTo( selector ) {
-		return wcHelper.mouseMoveTo( this.driver, selector );
+		return helper.mouseMoveTo( this.driver, selector );
 	}
 }
