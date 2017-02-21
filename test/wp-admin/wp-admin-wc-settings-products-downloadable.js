@@ -41,7 +41,7 @@ test.describe( 'WooCommerce Products > Downloadable Products Settings', function
 		const settings = new WPAdminWCSettingsProductsDownloadable( driver, settingsArgs );
 
 		assert.eventually.ok( settings.hasActiveTab( 'Products' ) );
-		assert.eventually.ok( settings.hasActiveSubTab( 'Downloadable Products' ) );
+		assert.eventually.ok( settings.hasActiveSubTab( 'Downloadable products' ) );
 
 		settings.selectFileDownloadMethod( 'Redirect only' );
 		settings.checkDownloadsRequireLogin();
@@ -49,7 +49,7 @@ test.describe( 'WooCommerce Products > Downloadable Products Settings', function
 		settings.saveChanges();
 		assert.eventually.ok( settings.hasNotice( 'Your settings have been saved.' ) );
 
-		settings.selectFileDownloadMethod( 'Force Downloads' );
+		settings.selectFileDownloadMethod( 'Force downloads' );
 		settings.uncheckDownloadsRequireLogin();
 		settings.uncheckGrantAccessAfterPayment();
 		settings.saveChanges();

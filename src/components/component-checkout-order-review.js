@@ -24,7 +24,7 @@ export default class ComponentCheckoutOrderReview extends ComponentCheckout {
 			']'
 		);
 
-		return helper.isEventuallyPresentAndDisplayed(
+		return helper.waitTillPresentAndDisplayed(
 			this.driver,
 			selector
 		);

@@ -30,10 +30,30 @@ export function waitTillAlertAccepted( driver, waitMs = 10000 ) {
 	}, waitMs, 'Time out waiting for alert to be accepted' );
 }
 
+export function getSelect2ToggleSelectorByName( name, args ) {
+	args = Object.assign(
+		{
+			multiple: false
+		},
+		args
+	);
+
+	return args.multiple
+		? By.xpath(
+			`//select[@name="${ name }"]` +
+			'/following-sibling::span[contains(@class, "select2")]'
+		)
+		: By.xpath(
+			`//select[@name="${ name }"]` +
+			'/following-sibling::span[contains(@class, "select2")]' +
+			'//span[contains(@class,"select2-selection__arrow")]'
+		);
+}
+
 export function select2Option( driver, selector, option ) {
 	helper.clickWhenClickable( driver, selector );
 
-	const optionSelector = By.xpath( `//div[contains(@class, "select2-result-label") and contains(text(), "${ option }")]` );
+	const optionSelector = By.xpath( `//li[contains(@class, "select2-results__option") and contains(text(), "${ option }")]` );
 	return helper.clickWhenClickable( driver, optionSelector );
 }
 
@@ -44,10 +64,10 @@ export function select2OptionWithSearch( driver, selector, keyword, option ) {
 	// Wait till search results visible before typing the keyword.
 	helper.waitTillPresentAndDisplayed( driver, By.css( '.select2-results' ) );
 
-	const searchSelector = By.css( 'input.select2-input.select2-focused' );
+	const searchSelector = By.css( '.select2-container--open input.select2-search__field' );
 	helper.setWhenSettable( driver, searchSelector, keyword );
 
-	const optionSelector = By.xpath( `//div[contains(@class, "select2-result-label") and contains(.,"${ option }")]` );
+	const optionSelector = By.xpath( `//li[contains(@class, "select2-results__option") and contains(.,"${ option }")]` );
 	return helper.clickWhenClickable( driver, optionSelector );
 }
 
@@ -58,9 +78,9 @@ export function setSelect2WithSearch( driver, selector, keyword, option ) {
 	// Wait till search results visible before typing the keyword.
 	helper.waitTillPresentAndDisplayed( driver, By.css( '.select2-results' ) );
 
-	const searchSelector = By.css( 'input.select2-input.select2-focused' );
+	const searchSelector = By.css( '.select2-container--open input.select2-search__field' );
 	helper.setWhenSettable( driver, searchSelector, keyword );
 
-	const optionSelector = By.xpath( `//div[contains(@class, "select2-result-label") and contains(.,"${ option }")]` );
+	const optionSelector = By.xpath( `//li[contains(@class, "select2-results__option") and contains(.,"${ option }")]` );
 	return helper.clickWhenClickable( driver, optionSelector );
 }

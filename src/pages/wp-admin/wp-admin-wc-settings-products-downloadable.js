@@ -10,7 +10,7 @@ import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 import * as wcHelper from '../../helper';
 import WPAdminWCSettings from './wp-admin-wc-settings';
 
-const FILE_DOWNLOAD_METHOD_SELECTOR = By.css( '#s2id_woocommerce_file_download_method' );
+const FILE_DOWNLOAD_METHOD_SELECTOR = By.xpath( '//span[@id="select2-woocommerce_file_download_method-container"]/following-sibling::span[contains(@class, "select2-selection__arrow")]' );
 const DOWNLOAD_REQUIRE_LOGIN_SELECTOR = By.css( '#woocommerce_downloads_require_login' );
 const GRANT_ACCESS_AFTER_PAYMENT_SELECTOR = By.css( '#woocommerce_downloads_grant_access_after_payment' );
 
