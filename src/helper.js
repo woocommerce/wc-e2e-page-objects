@@ -30,6 +30,26 @@ export function waitTillAlertAccepted( driver, waitMs = 10000 ) {
 	}, waitMs, 'Time out waiting for alert to be accepted' );
 }
 
+export function getSelect2ToggleSelectorByName( name, args ) {
+	args = Object.assign(
+		{
+			multiple: false
+		},
+		args
+	);
+
+	return args.multiple
+		? By.xpath(
+			`//select[@name="${ name }"]` +
+			'/following-sibling::span[contains(@class, "select2")]'
+		)
+		: By.xpath(
+			`//select[@name="${ name }"]` +
+			'/following-sibling::span[contains(@class, "select2")]' +
+			'//span[contains(@class,"select2-selection__arrow")]'
+		);
+}
+
 export function select2Option( driver, selector, option ) {
 	helper.clickWhenClickable( driver, selector );
 
