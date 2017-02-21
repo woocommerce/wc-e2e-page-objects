@@ -120,6 +120,8 @@ export default class ComponentProductDataVariationRow extends Component {
 			mouseMove( this.driver.findElement( By.css( this.selector.value + ' > h3 > .handlediv' ) ) ).
 			click().
 			perform();
+
+		return helper.waitTillPresentAndDisplayed( this.driver, By.css( this.selector.value + ' .wc-metabox-content' ) );
 	}
 
 	remove() {
@@ -128,6 +130,6 @@ export default class ComponentProductDataVariationRow extends Component {
 			click().
 			perform();
 
-		this.driver.switchTo().alert().accept();
+		return this.driver.switchTo().alert().accept();
 	}
 }
