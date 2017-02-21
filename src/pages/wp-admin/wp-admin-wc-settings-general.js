@@ -10,11 +10,15 @@ import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 import * as wcHelper from '../../helper';
 import WPAdminWCSettings from './wp-admin-wc-settings';
 
-const BASE_LOCATION_SELECTOR = By.xpath( '//select[@name="woocommerce_default_country"]/following-sibling::span[contains(@class, "select2")]//span[contains(@class,"select2-selection__arrow")]' );
-const SELLING_LOCATION_SELECTOR = By.xpath( '//span[@id="select2-woocommerce_allowed_countries-container"]/following-sibling::span[contains(@class, "select2-selection__arrow")]' );
-const SELL_TO_SPECIFIC_COUNTRIES_SELECTOR = By.xpath( '//select[@name="woocommerce_specific_allowed_countries[]"]/following-sibling::span[contains(@class, "select2")]' );
+const BASE_LOCATION_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_default_country' );
+const SELLING_LOCATION_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_allowed_countries' );
+const SELL_TO_SPECIFIC_COUNTRIES_SELECTOR = wcHelper.getSelect2ToggleSelectorByName(
+	'woocommerce_specific_allowed_countries[]', { multiple: true }
+);
 const ENABLE_TAXES_SELECTOR = By.css( '#woocommerce_calc_taxes' );
 const STORE_NOTICE_SELECTOR = By.css( '#woocommerce_demo_store' );
+const CURRENCY_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_currency' );
+const CURRENCY_POSITION_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_currency_pos' );
 const THOUSAND_SEPARATOR_SELECTOR = By.css( '#woocommerce_price_thousand_sep' );
 const DECIMAL_SEPARATOR_SELECTOR = By.css( '#woocommerce_price_decimal_sep' );
 const NUMBER_OF_DECIMALS_SELECTOR = By.css( '#woocommerce_price_num_decimals' );
@@ -81,6 +85,14 @@ export default class WPAdminWCSettingsGeneral extends WPAdminWCSettings {
 	uncheckStoreNotice() {
 		helper.setCheckbox( this.driver, STORE_NOTICE_SELECTOR );
 		return helper.unsetCheckbox( this.driver, STORE_NOTICE_SELECTOR );
+	}
+
+	selectCurrency( keyword, exactOption ) {
+		return wcHelper.select2OptionWithSearch( this.driver, CURRENCY_SELECTOR, keyword, exactOption );
+	}
+
+	selectCurrencyPosition( position ) {
+		return wcHelper.select2Option( this.driver, CURRENCY_POSITION_SELECTOR, position );
 	}
 
 	setThousandSeparator( separator ) {
