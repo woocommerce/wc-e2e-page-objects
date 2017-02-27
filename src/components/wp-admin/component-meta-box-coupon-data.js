@@ -50,6 +50,6 @@ export default class ComponentMetaBoxCouponData extends ComponentMetaBox {
 
 	_getTabSelector( tab, args = { active: false } ) {
 		const li = args.active ? 'li[contains(@class, "active")]' : 'li';
-		return By.xpath( `//ul[contains(@class,"coupon_data_tabs")]//${ li }/a[contains(text(), "${ tab }")]` );
+		return By.xpath( `//ul[contains(@class,"coupon_data_tabs")]//${ li }/a[contains(., "${ tab }")]` );
 	}
 }
