@@ -44,3 +44,6 @@ lib
 
 # Test configs
 test/config/local-*
+
+# Mac
+*.DS_Store
