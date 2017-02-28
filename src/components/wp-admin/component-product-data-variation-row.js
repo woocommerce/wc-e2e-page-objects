@@ -4,6 +4,7 @@
 import { By } from 'selenium-webdriver';
 import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 import { Component } from 'wp-e2e-page-objects';
+import * as wcHelper from '../../helper';
 
 export default class ComponentProductDataVariationRow extends Component {
 	constructor( driver, selector ) {
@@ -116,6 +117,8 @@ export default class ComponentProductDataVariationRow extends Component {
 	}
 
 	toggle() {
+		wcHelper.waitTillAnimationFinished( this.driver );
+
 		this.driver.actions().
 			mouseMove( this.driver.findElement( By.css( this.selector.value + ' > h3 > .handlediv' ) ) ).
 			click().
