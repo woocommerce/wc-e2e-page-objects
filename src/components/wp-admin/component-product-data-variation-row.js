@@ -13,41 +13,49 @@ export default class ComponentProductDataVariationRow extends Component {
 
 	checkEnabled() {
 		const selector = By.css( this.selector.value + ' input[name^="variable_enabled"]' );
+		helper.mouseMoveTo( this.driver, this.selector );
 		return helper.setCheckbox( this.driver, selector );
 	}
 
 	uncheckEnabled() {
 		const selector = By.css( this.selector.value + ' input[name^="variable_enabled"]' );
+		helper.mouseMoveTo( this.driver, this.selector );
 		return helper.unsetCheckbox( this.driver, selector );
 	}
 
 	checkVirtual() {
 		const selector = By.css( this.selector.value + ' input[name^="variable_is_virtual"]' );
+		helper.mouseMoveTo( this.driver, this.selector );
 		return helper.setCheckbox( this.driver, selector );
 	}
 
 	uncheckVirtual() {
 		const selector = By.css( this.selector.value + ' input[name^="variable_is_virtual"]' );
+		helper.mouseMoveTo( this.driver, this.selector );
 		return helper.unsetCheckbox( this.driver, selector );
 	}
 
 	checkDownloadable() {
 		const selector = By.css( this.selector.value + ' input[name^="variable_is_downloadable"]' );
+		helper.mouseMoveTo( this.driver, this.selector );
 		return helper.setCheckbox( this.driver, selector );
 	}
 
 	uncheckDownloadable() {
 		const selector = By.css( this.selector.value + ' input[name^="variable_is_downloadable"]' );
+		helper.mouseMoveTo( this.driver, this.selector );
 		return helper.unsetCheckbox( this.driver, selector );
 	}
 
 	checkManageStock() {
 		const selector = By.css( this.selector.value + ' input[name^="variable_manage_stock"]' );
+		helper.mouseMoveTo( this.driver, this.selector );
 		return helper.setCheckbox( this.driver, selector );
 	}
 
 	uncheckManageStock() {
 		const selector = By.css( this.selector.value + ' input[name^="variable_manage_stock"]' );
+		helper.mouseMoveTo( this.driver, this.selector );
 		return helper.unsetCheckbox( this.driver, selector );
 	}
 
