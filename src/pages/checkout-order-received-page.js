@@ -1,4 +1,8 @@
 /**
+ * @module CheckoutOrderReceivedPage
+ */
+
+/**
  * External dependencies
  */
 import { Page } from 'wp-e2e-page-objects';
@@ -20,6 +24,11 @@ const defaultArgs = {
 	}
 };
 
+/**
+ * The front-end Checkout success page.
+ *
+ * @extends Page
+ */
 export default class CheckoutOrderReceivedPage extends Page {
 	constructor( driver, args = {} ) {
 		args = Object.assign( defaultArgs, args );

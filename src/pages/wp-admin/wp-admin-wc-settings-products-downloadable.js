@@ -1,4 +1,8 @@
 /**
+ * @module WPAdminWCSettingsProductsDownloadable
+ */
+
+/**
  * External dependencies
  */
 import { By } from 'selenium-webdriver';
@@ -19,31 +23,67 @@ const defaultArgs = {
 	visit: true,
 };
 
+/**
+ * The Products: Downloadable Products settings screen
+ *
+ * @extends WPAdminWCSettings
+ */
 export default class WPAdminWCSettingsProductsDownloadable extends WPAdminWCSettings {
+
+	/**
+ 	* @param {WebDriver} driver   - Instance of WebDriver.
+ 	* @param {object}    args     - Configuration arguments.
+	*/
 	constructor( driver, args = {} ) {
 		args = Object.assign( defaultArgs, args );
 		super( driver, args );
 	}
 
+	/**
+	* Select the file download method.
+	*
+ 	* @param  {string}    option - File download text.
+ 	* @return {Promise}   Promise that evaluates to `true` if file download method selected successfully, `false` otherwise.
+	*/
 	selectFileDownloadMethod( option ) {
 		return wcHelper.select2Option( this.driver, FILE_DOWNLOAD_METHOD_SELECTOR, option );
 	}
 
+	/**
+	* Check the "Downloads require login" checkbox.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets checked successfully, `false` otherwise.
+	*/
 	checkDownloadsRequireLogin() {
 		helper.unsetCheckbox( this.driver, DOWNLOAD_REQUIRE_LOGIN_SELECTOR );
 		return helper.setCheckbox( this.driver, DOWNLOAD_REQUIRE_LOGIN_SELECTOR );
 	}
 
+	/**
+	* Uncheck the "Downloads require login" checkbox.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets unchecked successfully, `false` otherwise.
+	*/
 	uncheckDownloadsRequireLogin() {
 		helper.setCheckbox( this.driver, DOWNLOAD_REQUIRE_LOGIN_SELECTOR );
 		return helper.unsetCheckbox( this.driver, DOWNLOAD_REQUIRE_LOGIN_SELECTOR );
 	}
 
+	/**
+	* Check the "Grant access to downloadable products after payment" checkbox.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets checked successfully, `false` otherwise.
+	*/
 	checkGrantAccessAfterPayment() {
 		helper.unsetCheckbox( this.driver, GRANT_ACCESS_AFTER_PAYMENT_SELECTOR );
 		return helper.setCheckbox( this.driver, GRANT_ACCESS_AFTER_PAYMENT_SELECTOR );
 	}
 
+	/**
+	* Uncheck the "Grant access to downloadable products after payment" checkbox.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets unhecked successfully, `false` otherwise.
+	*/
 	uncheckGrantAccessAfterPayment() {
 		helper.setCheckbox( this.driver, GRANT_ACCESS_AFTER_PAYMENT_SELECTOR );
 		return helper.unsetCheckbox( this.driver, GRANT_ACCESS_AFTER_PAYMENT_SELECTOR );

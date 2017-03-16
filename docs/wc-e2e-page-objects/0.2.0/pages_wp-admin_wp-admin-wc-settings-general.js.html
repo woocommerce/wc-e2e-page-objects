@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>pages/wp-admin/wp-admin-wc-settings-general.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-CartPage.html">CartPage</a><ul class='methods'><li data-type='method'><a href="module-CartPage.html#checkout">checkout</a></li><li data-type='method'><a href="module-CartPage.html#getItem">getItem</a></li><li data-type='method'><a href="module-CartPage.html#hasItem">hasItem</a></li><li data-type='method'><a href="module-CartPage.html#hasNoItem">hasNoItem</a></li><li data-type='method'><a href="module-CartPage.html#hasSubtotal">hasSubtotal</a></li><li data-type='method'><a href="module-CartPage.html#returnToShop">returnToShop</a></li><li data-type='method'><a href="module-CartPage.html#update">update</a></li></ul></li><li><a href="module-CheckoutOrderReceivedPage.html">CheckoutOrderReceivedPage</a></li><li><a href="module-CheckoutPage.html">CheckoutPage</a><ul class='methods'><li data-type='method'><a href="module-CheckoutPage.html#checkShipToDifferentAddress">checkShipToDifferentAddress</a></li><li data-type='method'><a href="module-CheckoutPage.html#placeOrder">placeOrder</a></li><li data-type='method'><a href="module-CheckoutPage.html#selectPaymentMethod">selectPaymentMethod</a></li><li data-type='method'><a href="module-CheckoutPage.html#setOrderNotes">setOrderNotes</a></li><li data-type='method'><a href="module-CheckoutPage.html#uncheckShipToDifferentAddress">uncheckShipToDifferentAddress</a></li></ul></li><li><a href="module-MyAccountPage.html">MyAccountPage</a><ul class='methods'><li data-type='method'><a href="module-MyAccountPage.html#clickMenu">clickMenu</a></li><li data-type='method'><a href="module-MyAccountPage.html#hasMenu">hasMenu</a></li><li data-type='method'><a href="module-MyAccountPage.html#login">login</a></li></ul></li><li><a href="module-ShopPage.html">ShopPage</a><ul class='methods'><li data-type='method'><a href="module-ShopPage.html#addProductToCart">addProductToCart</a></li><li data-type='method'><a href="module-ShopPage.html#clickProduct">clickProduct</a></li><li data-type='method'><a href="module-ShopPage.html#goToPage">goToPage</a></li><li data-type='method'><a href="module-ShopPage.html#nextPage">nextPage</a></li><li data-type='method'><a href="module-ShopPage.html#sortBy">sortBy</a></li></ul></li><li><a href="module-WPAdminCouponEdit.html">WPAdminCouponEdit</a><ul class='methods'><li data-type='method'><a href="module-WPAdminCouponEdit.html#setDescription">setDescription</a></li></ul></li><li><a href="module-WPAdminCouponNew.html">WPAdminCouponNew</a></li><li><a href="module-WPAdminCoupons.html">WPAdminCoupons</a></li><li><a href="module-WPAdminOrderEdit.html">WPAdminOrderEdit</a></li><li><a href="module-WPAdminOrderNew.html">WPAdminOrderNew</a></li><li><a href="module-WPAdminOrders.html">WPAdminOrders</a></li><li><a href="module-WPAdminProductEdit.html">WPAdminProductEdit</a></li><li><a href="module-WPAdminProductNew.html">WPAdminProductNew</a></li><li><a href="module-WPAdminProducts.html">WPAdminProducts</a></li><li><a href="module-WPAdminWCSettings.html">WPAdminWCSettings</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettings.html#_getSubTabSelector">_getSubTabSelector</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#_getTabSelector">_getTabSelector</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#clickSubTab">clickSubTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#clickTab">clickTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#hasActiveSubTab">hasActiveSubTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#hasActiveTab">hasActiveTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#hasSubTab">hasSubTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#hasTab">hasTab</a></li></ul></li><li><a href="module-WPAdminWCSettingsCheckout.html">WPAdminWCSettingsCheckout</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsCheckout.html#checkCalculateDiscountsSequentially">checkCalculateDiscountsSequentially</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckout.html#checkEnableCoupons">checkEnableCoupons</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckout.html#uncheckCalculateDiscountsSequentially">uncheckCalculateDiscountsSequentially</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckout.html#uncheckEnableCoupons">uncheckEnableCoupons</a></li></ul></li><li><a href="module-WPAdminWCSettingsCheckoutBACS.html">WPAdminWCSettingsCheckoutBACS</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutBACS.html#checkEnable">checkEnable</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutBACS.html#uncheckEnable">uncheckEnable</a></li></ul></li><li><a href="module-WPAdminWCSettingsCheckoutCOD.html">WPAdminWCSettingsCheckoutCOD</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutCOD.html#checkEnable">checkEnable</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutCOD.html#uncheckEnable">uncheckEnable</a></li></ul></li><li><a href="module-WPAdminWCSettingsCheckoutPayPal.html">WPAdminWCSettingsCheckoutPayPal</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutPayPal.html#checkEnable">checkEnable</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutPayPal.html#uncheckEnable">uncheckEnable</a></li></ul></li><li><a href="module-WPAdminWCSettingsGeneral.html">WPAdminWCSettingsGeneral</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#checkEnableTaxes">checkEnableTaxes</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#checkStoreNotice">checkStoreNotice</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#removeChoiceInSellToSpecificCountries">removeChoiceInSellToSpecificCountries</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#selectBaseLocation">selectBaseLocation</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#selectCurrency">selectCurrency</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#selectCurrencyPosition">selectCurrencyPosition</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#selectSellingLocation">selectSellingLocation</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#setDecimalSeparator">setDecimalSeparator</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#setNumberOfDecimals">setNumberOfDecimals</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#setSellToSpecificCountries">setSellToSpecificCountries</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#setThousandSeparator">setThousandSeparator</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#uncheckEnableTaxes">uncheckEnableTaxes</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#uncheckStoreNotice">uncheckStoreNotice</a></li></ul></li><li><a href="module-WPAdminWCSettingsProductsDownloadable.html">WPAdminWCSettingsProductsDownloadable</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#checkDownloadsRequireLogin">checkDownloadsRequireLogin</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#checkGrantAccessAfterPayment">checkGrantAccessAfterPayment</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#selectFileDownloadMethod">selectFileDownloadMethod</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#uncheckDownloadsRequireLogin">uncheckDownloadsRequireLogin</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#uncheckGrantAccessAfterPayment">uncheckGrantAccessAfterPayment</a></li></ul></li><li><a href="module-WPAdminWCSettingsProductsGeneral.html">WPAdminWCSettingsProductsGeneral</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#checkEnableRatingsOnReviews">checkEnableRatingsOnReviews</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#checkOnlyAllowReviewsFromVerifiedOwners">checkOnlyAllowReviewsFromVerifiedOwners</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#checkRatingsAreRequiredToLeaveReview">checkRatingsAreRequiredToLeaveReview</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#checkShowVerifiedOwnerLabel">checkShowVerifiedOwnerLabel</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#selectDimensionsUnit">selectDimensionsUnit</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#selectWeightUnit">selectWeightUnit</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#uncheckEnableRatingsOnReviews">uncheckEnableRatingsOnReviews</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#uncheckOnlyAllowReviewsFromVerifiedOwners">uncheckOnlyAllowReviewsFromVerifiedOwners</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#uncheckRatingsAreRequiredToLeaveReview">uncheckRatingsAreRequiredToLeaveReview</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#uncheckShowVerifiedOwnerLabel">uncheckShowVerifiedOwnerLabel</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-CartPage.html">CartPage</a><ul class='methods'><li data-type='method'><a href="module-CartPage.html#checkout">checkout</a></li><li data-type='method'><a href="module-CartPage.html#getItem">getItem</a></li><li data-type='method'><a href="module-CartPage.html#hasItem">hasItem</a></li><li data-type='method'><a href="module-CartPage.html#hasNoItem">hasNoItem</a></li><li data-type='method'><a href="module-CartPage.html#hasSubtotal">hasSubtotal</a></li><li data-type='method'><a href="module-CartPage.html#returnToShop">returnToShop</a></li><li data-type='method'><a href="module-CartPage.html#update">update</a></li></ul></li><li><a href="module-CheckoutOrderReceivedPage.html">CheckoutOrderReceivedPage</a></li><li><a href="module-CheckoutPage.html">CheckoutPage</a><ul class='methods'><li data-type='method'><a href="module-CheckoutPage.html#checkShipToDifferentAddress">checkShipToDifferentAddress</a></li><li data-type='method'><a href="module-CheckoutPage.html#placeOrder">placeOrder</a></li><li data-type='method'><a href="module-CheckoutPage.html#selectPaymentMethod">selectPaymentMethod</a></li><li data-type='method'><a href="module-CheckoutPage.html#setOrderNotes">setOrderNotes</a></li><li data-type='method'><a href="module-CheckoutPage.html#uncheckShipToDifferentAddress">uncheckShipToDifferentAddress</a></li></ul></li><li><a href="module-MyAccountPage.html">MyAccountPage</a><ul class='methods'><li data-type='method'><a href="module-MyAccountPage.html#clickMenu">clickMenu</a></li><li data-type='method'><a href="module-MyAccountPage.html#hasMenu">hasMenu</a></li><li data-type='method'><a href="module-MyAccountPage.html#login">login</a></li></ul></li><li><a href="module-ShopPage.html">ShopPage</a><ul class='methods'><li data-type='method'><a href="module-ShopPage.html#addProductToCart">addProductToCart</a></li><li data-type='method'><a href="module-ShopPage.html#clickProduct">clickProduct</a></li><li data-type='method'><a href="module-ShopPage.html#goToPage">goToPage</a></li><li data-type='method'><a href="module-ShopPage.html#nextPage">nextPage</a></li><li data-type='method'><a href="module-ShopPage.html#sortBy">sortBy</a></li></ul></li><li><a href="module-WebDriverHelper.html">WebDriverHelper</a><ul class='methods'><li data-type='method'><a href="module-WebDriverHelper.html#.getSelect2ToggleSelectorByName">getSelect2ToggleSelectorByName</a></li><li data-type='method'><a href="module-WebDriverHelper.html#.select2Option">select2Option</a></li><li data-type='method'><a href="module-WebDriverHelper.html#.select2OptionWithSearch">select2OptionWithSearch</a></li><li data-type='method'><a href="module-WebDriverHelper.html#.setSelect2WithSearch">setSelect2WithSearch</a></li><li data-type='method'><a href="module-WebDriverHelper.html#.waitTillAlertAccepted">waitTillAlertAccepted</a></li><li data-type='method'><a href="module-WebDriverHelper.html#.waitTillAnimationFinished">waitTillAnimationFinished</a></li><li data-type='method'><a href="module-WebDriverHelper.html#.waitTillUIBlockNotPresent">waitTillUIBlockNotPresent</a></li><li data-type='method'><a href="module-WebDriverHelper.html#.waitTillUIBlockPresent">waitTillUIBlockPresent</a></li></ul></li><li><a href="module-WPAdminCouponEdit.html">WPAdminCouponEdit</a><ul class='methods'><li data-type='method'><a href="module-WPAdminCouponEdit.html#setDescription">setDescription</a></li></ul></li><li><a href="module-WPAdminCouponNew.html">WPAdminCouponNew</a></li><li><a href="module-WPAdminCoupons.html">WPAdminCoupons</a></li><li><a href="module-WPAdminOrderEdit.html">WPAdminOrderEdit</a></li><li><a href="module-WPAdminOrderNew.html">WPAdminOrderNew</a></li><li><a href="module-WPAdminOrders.html">WPAdminOrders</a></li><li><a href="module-WPAdminProductEdit.html">WPAdminProductEdit</a></li><li><a href="module-WPAdminProductNew.html">WPAdminProductNew</a></li><li><a href="module-WPAdminProducts.html">WPAdminProducts</a></li><li><a href="module-WPAdminWCSettings.html">WPAdminWCSettings</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettings.html#_getSubTabSelector">_getSubTabSelector</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#_getTabSelector">_getTabSelector</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#clickSubTab">clickSubTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#clickTab">clickTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#hasActiveSubTab">hasActiveSubTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#hasActiveTab">hasActiveTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#hasSubTab">hasSubTab</a></li><li data-type='method'><a href="module-WPAdminWCSettings.html#hasTab">hasTab</a></li></ul></li><li><a href="module-WPAdminWCSettingsCheckout.html">WPAdminWCSettingsCheckout</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsCheckout.html#checkCalculateDiscountsSequentially">checkCalculateDiscountsSequentially</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckout.html#checkEnableCoupons">checkEnableCoupons</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckout.html#uncheckCalculateDiscountsSequentially">uncheckCalculateDiscountsSequentially</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckout.html#uncheckEnableCoupons">uncheckEnableCoupons</a></li></ul></li><li><a href="module-WPAdminWCSettingsCheckoutBACS.html">WPAdminWCSettingsCheckoutBACS</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutBACS.html#checkEnable">checkEnable</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutBACS.html#uncheckEnable">uncheckEnable</a></li></ul></li><li><a href="module-WPAdminWCSettingsCheckoutCOD.html">WPAdminWCSettingsCheckoutCOD</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutCOD.html#checkEnable">checkEnable</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutCOD.html#uncheckEnable">uncheckEnable</a></li></ul></li><li><a href="module-WPAdminWCSettingsCheckoutPayPal.html">WPAdminWCSettingsCheckoutPayPal</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutPayPal.html#checkEnable">checkEnable</a></li><li data-type='method'><a href="module-WPAdminWCSettingsCheckoutPayPal.html#uncheckEnable">uncheckEnable</a></li></ul></li><li><a href="module-WPAdminWCSettingsGeneral.html">WPAdminWCSettingsGeneral</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#checkEnableTaxes">checkEnableTaxes</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#checkStoreNotice">checkStoreNotice</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#removeChoiceInSellToSpecificCountries">removeChoiceInSellToSpecificCountries</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#selectBaseLocation">selectBaseLocation</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#selectCurrency">selectCurrency</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#selectCurrencyPosition">selectCurrencyPosition</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#selectSellingLocation">selectSellingLocation</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#setDecimalSeparator">setDecimalSeparator</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#setNumberOfDecimals">setNumberOfDecimals</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#setSellToSpecificCountries">setSellToSpecificCountries</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#setThousandSeparator">setThousandSeparator</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#uncheckEnableTaxes">uncheckEnableTaxes</a></li><li data-type='method'><a href="module-WPAdminWCSettingsGeneral.html#uncheckStoreNotice">uncheckStoreNotice</a></li></ul></li><li><a href="module-WPAdminWCSettingsProductsDownloadable.html">WPAdminWCSettingsProductsDownloadable</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#checkDownloadsRequireLogin">checkDownloadsRequireLogin</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#checkGrantAccessAfterPayment">checkGrantAccessAfterPayment</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#selectFileDownloadMethod">selectFileDownloadMethod</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#uncheckDownloadsRequireLogin">uncheckDownloadsRequireLogin</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsDownloadable.html#uncheckGrantAccessAfterPayment">uncheckGrantAccessAfterPayment</a></li></ul></li><li><a href="module-WPAdminWCSettingsProductsGeneral.html">WPAdminWCSettingsProductsGeneral</a><ul class='methods'><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#checkEnableRatingsOnReviews">checkEnableRatingsOnReviews</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#checkOnlyAllowReviewsFromVerifiedOwners">checkOnlyAllowReviewsFromVerifiedOwners</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#checkRatingsAreRequiredToLeaveReview">checkRatingsAreRequiredToLeaveReview</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#checkShowVerifiedOwnerLabel">checkShowVerifiedOwnerLabel</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#selectDimensionsUnit">selectDimensionsUnit</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#selectWeightUnit">selectWeightUnit</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#uncheckEnableRatingsOnReviews">uncheckEnableRatingsOnReviews</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#uncheckOnlyAllowReviewsFromVerifiedOwners">uncheckOnlyAllowReviewsFromVerifiedOwners</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#uncheckRatingsAreRequiredToLeaveReview">uncheckRatingsAreRequiredToLeaveReview</a></li><li data-type='method'><a href="module-WPAdminWCSettingsProductsGeneral.html#uncheckShowVerifiedOwnerLabel">uncheckShowVerifiedOwnerLabel</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#productTitle">productTitle</a></li><li><a href="global.html#SELECTOR">SELECTOR</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">pages/wp-admin/wp-admin-wc-settings-general.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module WPAdminWCSettingsGeneral
+ */
+
+/**
+ * External dependencies
+ */
+import { By } from 'selenium-webdriver';
+import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
+
+/**
+ * Internal Dependencies
+ */
+import * as wcHelper from '../../helper';
+import WPAdminWCSettings from './wp-admin-wc-settings';
+
+const BASE_LOCATION_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_default_country' );
+const SELLING_LOCATION_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_allowed_countries' );
+const SELL_TO_SPECIFIC_COUNTRIES_SELECTOR = wcHelper.getSelect2ToggleSelectorByName(
+	'woocommerce_specific_allowed_countries[]', { multiple: true }
+);
+const ENABLE_TAXES_SELECTOR = By.css( '#woocommerce_calc_taxes' );
+const STORE_NOTICE_SELECTOR = By.css( '#woocommerce_demo_store' );
+const CURRENCY_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_currency' );
+const CURRENCY_POSITION_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_currency_pos' );
+const THOUSAND_SEPARATOR_SELECTOR = By.css( '#woocommerce_price_thousand_sep' );
+const DECIMAL_SEPARATOR_SELECTOR = By.css( '#woocommerce_price_decimal_sep' );
+const NUMBER_OF_DECIMALS_SELECTOR = By.css( '#woocommerce_price_num_decimals' );
+
+const defaultArgs = {
+	url: '',
+	visit: true,
+};
+
+/**
+ * The General admin settings screen
+ *
+ * @extends WPAdminWCSettings
+ */
+export default class WPAdminWCSettingsGeneral extends WPAdminWCSettings {
+
+	/**
+ 	* @param {WebDriver} driver   - Instance of WebDriver.
+ 	* @param {object}    args     - Configuration arguments.
+	*/
+	constructor( driver, args = {} ) {
+		args = Object.assign( defaultArgs, args );
+		super( driver, args );
+	}
+
+	/**
+	* Select the base location.
+	*
+ 	* @param  {string}    keyword      - Text to enter in the search field.
+ 	* @param  {string}    exactOption  - Text of option to select.
+ 	* @return {Promise}   Promise that evaluates to `true` if base location selected successfully, `false` otherwise.
+	*/
+	selectBaseLocation( keyword, exactOption ) {
+		return wcHelper.select2OptionWithSearch( this.driver, BASE_LOCATION_SELECTOR, keyword, exactOption );
+	}
+
+	/**
+	* Select the selling location preferences.
+	*
+ 	* @param  {string}    option  - Text of option to select.
+ 	* @return {Promise}   Promise that evaluates to `true` if selling location preferences selected successfully, `false` otherwise.
+	*/
+	selectSellingLocation( option ) {
+		return wcHelper.select2Option( this.driver, SELLING_LOCATION_SELECTOR, option );
+	}
+
+	/**
+	* Select a country to use for a selling location.
+	*
+ 	* @param  {string}    keyword      - Text to enter in the search field.
+ 	* @param  {string}    exactOption  - Text of option to select.
+ 	* @return {Promise}   Promise that evaluates to `true` if specified country selected successfully, `false` otherwise.
+	*/
+	setSellToSpecificCountries( keyword, exactOption ) {
+		return wcHelper.setSelect2WithSearch( this.driver, SELL_TO_SPECIFIC_COUNTRIES_SELECTOR, keyword, exactOption );
+	}
+
+	/**
+	* Unset a country from the selling locations.
+	*
+ 	* @param  {string}    choice  - Text of option to select.
+ 	* @return {Promise}   Promise that evaluates to `true` if specified country is/gets unselected, `false` otherwise.
+	*/
+	removeChoiceInSellToSpecificCountries( choice ) {
+		// TODO: maybe move this to wcHelper.
+		const selector = By.xpath(
+			'//select[@name="woocommerce_specific_allowed_countries[]"]' +
+			'/preceding-sibling::div[contains(@class, "wc-enhanced-select")]' +
+			`//div[contains(.,"${ choice }")]` +
+			'/following-sibling::a[contains(@class, "select2-search-choice-close")]'
+		);
+
+		// Make it doesn't trigger error when element is not found.
+		return this.driver.findElement( selector ).then( ( el ) => {
+			return el.click().then( () => {
+				return true;
+			}, () => {
+				return false;
+			} );
+		}, () => {
+			return false;
+		} );
+	}
+
+	/**
+	* Check the "Enable taxes" checkbox.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets checked successfully, `false` otherwise.
+	*/
+	checkEnableTaxes() {
+		helper.unsetCheckbox( this.driver, ENABLE_TAXES_SELECTOR );
+		return helper.setCheckbox( this.driver, ENABLE_TAXES_SELECTOR );
+	}
+
+	/**
+	* Uncheck the "Enable taxes" checkbox.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets unchecked successfully, `false` otherwise.
+	*/
+	uncheckEnableTaxes() {
+		helper.setCheckbox( this.driver, ENABLE_TAXES_SELECTOR );
+		return helper.unsetCheckbox( this.driver, ENABLE_TAXES_SELECTOR );
+	}
+
+	/**
+	* Check the "Store notice" checkbox.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets checked successfully, `false` otherwise.
+	*/
+	checkStoreNotice() {
+		helper.unsetCheckbox( this.driver, STORE_NOTICE_SELECTOR );
+		return helper.setCheckbox( this.driver, STORE_NOTICE_SELECTOR );
+	}
+
+	/**
+	* Uncheck the "Store notice" checkbox.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets checked successfully, `false` otherwise.
+	*/
+	uncheckStoreNotice() {
+		helper.setCheckbox( this.driver, STORE_NOTICE_SELECTOR );
+		return helper.unsetCheckbox( this.driver, STORE_NOTICE_SELECTOR );
+	}
+
+	/**
+	* Select a shop currency.
+	*
+ 	* @param  {string}    keyword      - Text to enter in the search field.
+ 	* @param  {string}    exactOption  - Text of option to select.
+ 	* @return {Promise}   Promise that evaluates to `true` if specified currency selected successfully, `false` otherwise.
+	*/
+	selectCurrency( keyword, exactOption ) {
+		return wcHelper.select2OptionWithSearch( this.driver, CURRENCY_SELECTOR, keyword, exactOption );
+	}
+
+	/**
+	* Select a shop currency position.
+	*
+ 	* @param  {string}    position     - Text of position to select.
+ 	* @return {Promise}   Promise that evaluates to `true` if specified currency position selected successfully, `false` otherwise.
+	*/
+	selectCurrencyPosition( position ) {
+		return wcHelper.select2Option( this.driver, CURRENCY_POSITION_SELECTOR, position );
+	}
+
+	/**
+	* Set the thousand separator input.
+	*
+ 	* @param  {string}    separator    - What to use for the separator.
+ 	* @return {Promise}   Promise that evaluates to `true` if separator set successfully, `false` otherwise.
+	*/
+	setThousandSeparator( separator ) {
+		return helper.setWhenSettable( this.driver, THOUSAND_SEPARATOR_SELECTOR, separator );
+	}
+
+	/**
+	* Set the decimal separator input.
+	*
+ 	* @param  {string}    separator    - What to use for the separator.
+ 	* @return {Promise}   Promise that evaluates to `true` if separator set successfully, `false` otherwise.
+	*/
+	setDecimalSeparator( separator ) {
+		return helper.setWhenSettable( this.driver, DECIMAL_SEPARATOR_SELECTOR, separator );
+	}
+
+	/**
+	* Set the number of decimals input.
+	*
+ 	* @param  {number}    num          - Number of decimals.
+ 	* @return {Promise}   Promise that evaluates to `true` if number of decimals set successfully, `false` otherwise.
+	*/
+	setNumberOfDecimals( num ) {
+		return helper.setWhenSettable( this.driver, NUMBER_OF_DECIMALS_SELECTOR, num );
+	}
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Mar 16 2017 13:52:44 GMT-0700 (PDT) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

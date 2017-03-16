@@ -1,4 +1,8 @@
 /**
+ * @module MyAccountPage
+ */
+
+/**
  * External dependencies
  */
 import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
@@ -19,7 +23,17 @@ const defaultArgs = {
 	}
 };
 
+/**
+ * The front-end My Account page
+ *
+ * @extends Page
+ */
 export default class MyAccountPage extends Page {
+
+	/**
+ 	* @param {WebDriver} driver   - Instance of WebDriver.
+ 	* @param {object}    args     - Configuration arguments.
+	*/
 	constructor( driver, args = {} ) {
 		args = Object.assign( defaultArgs, args );
 		super( driver, args );
@@ -27,6 +41,13 @@ export default class MyAccountPage extends Page {
 		helper.clearCookiesAndDeleteLocalStorage( driver );
 	}
 
+	/**
+	* Log in a user using the form.
+	*
+ 	* @param  {string}    username - The user's username.
+ 	* @param  {string}    password - The user's password.
+ 	* @return {Promise}   Promise that evaluates to `true` if form is filled and submitted successfully, `false` otherwise.
+	*/
 	login( username, password ) {
 		this.components.loginForm.fillUsername( username );
 		this.components.loginForm.fillPassword( password );
@@ -35,10 +56,22 @@ export default class MyAccountPage extends Page {
 		return this;
 	}
 
+	/**
+	* Check whether a menu item is present.
+	*
+ 	* @param  {string}    menu    - Text for the menu item.
+ 	* @return {Promise}   Promise that evaluates to `true` if menu item is present, `false` otherwise.
+	*/
 	hasMenu( menu ) {
 		return this.components.menu.hasMenu( menu );
 	}
 
+	/**
+	* Click a menu item.
+	*
+ 	* @param  {string}    menu    - Text for the menu item.
+ 	* @return {Promise}   Promise that evaluates to `true` if menu item is clicked successfully, `false` otherwise.
+	*/
 	clickMenu( menu ) {
 		return this.components.menu.click( menu );
 	}
