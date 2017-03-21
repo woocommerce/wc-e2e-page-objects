@@ -3154,9 +3154,9 @@
       "resolved": "https://registry.npmjs.org/wp-e2e-page-objects/-/wp-e2e-page-objects-0.6.0.tgz"
     },
     "wp-e2e-webdriver": {
-      "version": "0.10.0",
-      "from": "wp-e2e-webdriver@0.10.0",
-      "resolved": "https://registry.npmjs.org/wp-e2e-webdriver/-/wp-e2e-webdriver-0.10.0.tgz"
+      "version": "0.11.0",
+      "from": "wp-e2e-webdriver@0.11.0",
+      "resolved": "https://registry.npmjs.org/wp-e2e-webdriver/-/wp-e2e-webdriver-0.11.0.tgz"
     },
     "wrappy": {
       "version": "1.0.2",
