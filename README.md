@@ -13,6 +13,10 @@ WooCommerce Page Objects to be used on end-to-end tests with Selenium WebDriver.
 npm install wc-page-objects
 ```
 
+## Docs
+- [API](https://woocommerce.github.io/wc-e2e-page-objects/wc-e2e-page-objects/0.2.2/)
+- Tutorial: TODO
+
 ## Usage
 
 Example:
@@ -56,7 +60,3 @@ test.describe( 'Cart page', function() {
 	} );
 } );
 ~~~
-
-## Docs
-- [API](https://woocommerce.github.io/wc-e2e-page-objects/wc-e2e-page-objects/0.2.2/)
-- Tutorial: TODO
