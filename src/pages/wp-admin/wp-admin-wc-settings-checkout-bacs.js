@@ -1,4 +1,8 @@
 /**
+ * @module WPAdminWCSettingsCheckoutBACS
+ */
+
+/**
  * External dependencies
  */
 import { By } from 'selenium-webdriver';
@@ -16,16 +20,36 @@ const defaultArgs = {
 
 const ENABLE_SELECTOR = By.css( '#woocommerce_bacs_enabled' );
 
+/**
+ * The admin Checkout: BACS screen
+ *
+ * @extends WPAdminWCSettings
+ */
 export default class WPAdminWCSettingsCheckoutBACS extends WPAdminWCSettings {
+
+	/**
+ 	* @param {WebDriver} driver   - Instance of WebDriver.
+ 	* @param {object}    args     - Configuration arguments.
+	*/
 	constructor( driver, args = {} ) {
 		args = Object.assign( defaultArgs, args );
 		super( driver, args );
 	}
 
+	/**
+	* Check box that enables this gateway.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets checked successfully, `false` otherwise.
+	*/
 	checkEnable() {
 		return helper.setCheckbox( this.driver, ENABLE_SELECTOR );
 	}
 
+	/**
+	* Uncheck box that enables this gateway.
+	*
+ 	* @return {Promise}   Promise that evaluates to `true` if box is/gets unchecked successfully, `false` otherwise.
+	*/
 	uncheckEnable() {
 		return helper.unsetCheckbox( this.driver, ENABLE_SELECTOR );
 	}

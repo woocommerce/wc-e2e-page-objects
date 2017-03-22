@@ -1,4 +1,8 @@
 /**
+ * @module WPAdminOrderEdit
+ */
+
+/**
  * External dependencies
  */
 import { WPAdminPostEdit } from 'wp-e2e-page-objects';
@@ -12,7 +16,17 @@ import ComponentMetaBoxOrderActions from '../../components/wp-admin/component-me
 import ComponentMetaBoxOrderNotes from '../../components/wp-admin/component-meta-box-order-notes';
 import ComponentMetaBoxOrderDownloads from '../../components/wp-admin/component-meta-box-order-downloads';
 
+/**
+ * The admin Edit Order page
+ *
+ * @extends WPAdminPostEdit
+ */
 export default class WPAdminOrderEdit extends WPAdminPostEdit {
+
+	/**
+ 	* @param {WebDriver} driver   - Instance of WebDriver.
+ 	* @param {object}    args     - Configuration arguments.
+	*/
 	constructor( driver, args = {} ) {
 		args = Object.assign(
 			{

@@ -13,7 +13,8 @@
     "pre-publish": "npm run clean && npm run lint && npm run test && npm run build",
     "preversion": "npm run clean && npm run lint && npm run test",
     "version": "npm run build && git add -A .",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "docs:generate": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "files": [
     "lib",
@@ -60,6 +61,8 @@
     "eslint-plugin-react": "^6.3.0",
     "eslint-plugin-wpcalypso": "^3.0.2",
     "istanbul": "^1.0.0-alpha",
+    "jsdoc": "^3.4.3",
+    "minami": "^1.1.1",
     "mocha": "^3.0.2",
     "rimraf": "^2.5.4",
     "chromedriver": "^2.25.0"
