@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>pages/wp-admin/wp-admin-product-edit.js - Documentation</title>
+    <title>Tutorial: Overview - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,59 +28,24 @@
 
 <div id="main">
     
-    <h1 class="page-title">pages/wp-admin/wp-admin-product-edit.js</h1>
+    <h1 class="page-title">Tutorial: Overview</h1>
     
 
-    
-
-
-
-    
     <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @module WPAdminProductEdit
- */
 
-/**
- * External dependencies
- */
-import { WPAdminPostEdit } from 'wp-e2e-page-objects';
+<header>
+    
 
-/**
- * Internal dependencies
- */
-import ComponentMetaBoxProductData from '../../components/wp-admin/component-meta-box-product-data';
+    <h2>Overview</h2>
+</header>
 
-/**
- * The admin Edit Product screen
- *
- * @extends WPAdminPostEdit
- */
-export default class WPAdminProductEdit extends WPAdminPostEdit {
+<article>
+    <p>wc-e2e-page-objects is a collection of classes representing screens and screen components from a generic WooCommerce site. You can use these classes and Selenium to perform actions on a live or local WooCommerce site for end-to-end testing. The <a href="https://github.com/woocommerce/woocommerce">WooCommerce</a> team uses this library for end-to-end testing before large releases by automatically navigating around a site to verify that everything is working correctly. WooCommerce Extension developers can use this library for developing end-to-end tests for their extensions.</p>
+<p>If you're not already familiar with the basics of wp-e2e-webdriver and Selenium testing, it is highly recommended you first go through the very brief <a href="https://woocommerce.github.io/wp-e2e-webdriver/wp-e2e-webdriver/0.10.0/tutorial-overview.html">wp-e2e-webdriver tutorial</a>. <a href="https://github.com/woocommerce/wp-e2e-webdriver">wp-e2e-webdriver</a> is a dependency for wc-e2e-page-objects, so it is important to have some familiarity with it. Another dependency you need to get familiar with is <a href="https://github.com/woocommerce/wp-e2e-page-objects">wp-e2e-page-objects</a>. wp-e2e-page-objects is a collection of classes representing screens and screen components on a generic WordPress site.</p>
+<h2>Ready to get started?</h2><p>Read the <a href="https://woocommerce.github.io/wc-e2e-page-objects/wc-e2e-page-objects/0.2.2/tutorial-quick-start.html">quick start guide</a>.</p>
+</article>
 
-	/**
- 	* @param {WebDriver} driver   - Instance of WebDriver.
- 	* @param {object}    args     - Configuration arguments.
-	*/
-	constructor( driver, args = {} ) {
-		args = Object.assign(
-			{
-				components: {
-					metaBoxProductData: ComponentMetaBoxProductData
-				}
-			},
-			args
-		);
-		super( driver, args );
-	}
-}
-</code></pre>
-        </article>
-    </section>
-
-
-
+</section>
 
 </div>
 
