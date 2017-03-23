@@ -112,7 +112,6 @@ export default class WPAdminWCSettings extends WPAdminSettings {
 		if ( active ) {
 			exp = `//ul[contains(@class, "subsubsub")]/li/a[contains(@class, "current") and contains(text(), "${ subTab }")]`;
 		}
-console.log( exp );
 		return By.xpath( exp );
 	}
 }
