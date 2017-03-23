@@ -46,7 +46,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if set successfully, `false` otherwise.
 	*/
 	setCountryCode( row, value ) {
-		return helper.setWhenSettable( this.driver, this._getSelector( row, '.wc_input_country_iso' ), value );
+		return helper.setWhenSettable( this.driver, this.getSelector( row, '.wc_input_country_iso' ), value );
 	}
 
 	/**
@@ -57,7 +57,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if set successfully, `false` otherwise.
 	*/
 	setStateCode( row, value ) {
-		return helper.setWhenSettable( this.driver, this._getSelector( row, '.state input' ), value );
+		return helper.setWhenSettable( this.driver, this.getSelector( row, '.state input' ), value );
 	}
 
 	/**
@@ -68,7 +68,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if set successfully, `false` otherwise.
 	*/
 	setZipCode( row, value ) {
-		return helper.setWhenSettable( this.driver, this._getSelector( row, '.postcode input' ), value );
+		return helper.setWhenSettable( this.driver, this.getSelector( row, '.postcode input' ), value );
 	}
 
 	/**
@@ -79,7 +79,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if set successfully, `false` otherwise.
 	*/
 	setCity( row, value ) {
-		return helper.setWhenSettable( this.driver, this._getSelector( row, '.city input' ), value );
+		return helper.setWhenSettable( this.driver, this.getSelector( row, '.city input' ), value );
 	}
 
 	/**
@@ -90,7 +90,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if set successfully, `false` otherwise.
 	*/
 	setRate( row, value ) {
-		return helper.setWhenSettable( this.driver, this._getSelector( row, '.rate input' ), value );
+		return helper.setWhenSettable( this.driver, this.getSelector( row, '.rate input' ), value );
 	}
 
 	/**
@@ -101,7 +101,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if set successfully, `false` otherwise.
 	*/
 	setTaxName( row, value ) {
-		return helper.setWhenSettable( this.driver, this._getSelector( row, '.name input' ), value );
+		return helper.setWhenSettable( this.driver, this.getSelector( row, '.name input' ), value );
 	}
 
 	/**
@@ -112,7 +112,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if set successfully, `false` otherwise.
 	*/
 	setPriority( row, value ) {
-		return helper.setWhenSettable( this.driver, this._getSelector( row, '.priority input' ), value );
+		return helper.setWhenSettable( this.driver, this.getSelector( row, '.priority input' ), value );
 	}
 
 	/**
@@ -122,7 +122,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if box is/gets checked successfully, `false` otherwise.
 	*/
 	checkCompound( row ) {
-		const selector = this._getSelector( row, '.compound input' );
+		const selector = this.getSelector( row, '.compound input' );
 		helper.unsetCheckbox( this.driver, selector );
 		return helper.setCheckbox( this.driver, selector );
 	}
@@ -134,7 +134,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if box is/gets unchecked successfully, `false` otherwise.
 	*/
 	uncheckCompound( row ) {
-		const selector = this._getSelector( row, '.compound input' );
+		const selector = this.getSelector( row, '.compound input' );
 		helper.setCheckbox( this.driver, selector );
 		return helper.unsetCheckbox( this.driver, selector );
 	}
@@ -146,7 +146,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if box is/gets checked successfully, `false` otherwise.
 	*/
 	checkShipping( row ) {
-		const selector = this._getSelector( row, '.apply_to_shipping input' );
+		const selector = this.getSelector( row, '.apply_to_shipping input' );
 		helper.unsetCheckbox( this.driver, selector );
 		return helper.setCheckbox( this.driver, selector );
 	}
@@ -158,7 +158,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if box is/gets unchecked successfully, `false` otherwise.
 	*/
 	uncheckShipping( row ) {
-		const selector = this._getSelector( row, '.apply_to_shipping input' );
+		const selector = this.getSelector( row, '.apply_to_shipping input' );
 		helper.setCheckbox( this.driver, selector );
 		return helper.unsetCheckbox( this.driver, selector );
 	}
@@ -188,7 +188,7 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if row removed successfully using UI, `false` otherwise.
 	*/
 	removeRow( row ) {
-		return helper.clickWhenClickable( this.driver, this._getSelector( row, '.wc_input_country_iso' ) ).then(
+		return helper.clickWhenClickable( this.driver, this.getSelector( row, '.wc_input_country_iso' ) ).then(
 			() => {
 				return this.removeSelectedRows();
 			}
@@ -196,12 +196,13 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
 	}
 
 	/**
-	 * Get the selector for an element in the tax rate form. (Internal use only)
+	 * Get the selector for an element in the tax rate form.
 	 *
 	 * @param  {int}       row - Row number element is in.
 	 * @param  {string}    child_el - An optional CSS selector to look for inside the row. Default: ''
+	 * @return {object}    selector
 	 */
-	_getSelector( row, child_el = '' ) {
+	getSelector( row, child_el = '' ) {
 		return By.css( `#rates tr:nth-child(${ row }) ${ child_el }` );
 	}
 }

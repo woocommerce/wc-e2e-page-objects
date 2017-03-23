@@ -35,7 +35,7 @@ test.describe( 'WooCommerce Tax Settings', function() {
 		const wpLogin = new WPLogin( driver, { url: manager.getPageUrl( '/wp-login.php' ) } );
 		wpLogin.login( config.get( 'users.admin.username' ), config.get( 'users.admin.password' ) );
 	} );
-/*
+
 	test.it( 'can set tax options', () => {
 		const settingsArgs = { url: manager.getPageUrl( '/wp-admin/admin.php?page=wc-settings&tab=tax' ) };
 		const settings = new WPAdminWCSettingsTax( driver, settingsArgs );
@@ -54,53 +54,50 @@ test.describe( 'WooCommerce Tax Settings', function() {
 		assert.eventually.ok( settings.hasNotice( 'Your settings have been saved.' ) );
 	} );
 
-	test.it( 'can add and remove tax classes', () => {
+	test.it( 'can add tax classes', () => {
 		const settingsArgs = { url: manager.getPageUrl( '/wp-admin/admin.php?page=wc-settings&tab=tax' ) };
 		const settings = new WPAdminWCSettingsTax( driver, settingsArgs );
 
 		settings.removeAdditionalTaxClasses();
 		settings.saveChanges();
 
-		settings.addAdditionalTaxClass( 'Fancy rate' );
+		settings.addAdditionalTaxClass( 'Fancy' );
 		settings.saveChanges();
 
-		assert.eventually.ok( settings.hasSubTab( 'Fancy rate rates' ) );
-
-		settings.removeAdditionalTaxClass( 'Fancy rate' );
-		settings.saveChanges();
-
-		assert.eventually.ifError( settings.hasSubTab( 'Fancy rate rates' ) );
+		assert.eventually.ok( settings.hasSubTab( 'Fancy rates' ) );
 	} );
-*/
-	test.it( 'can do something', () => {
-		const settingsArgs = { url: manager.getPageUrl( '/wp-admin/admin.php?page=wc-settings&tab=tax&section=standard' ) };
+
+	test.it( 'can set rate settings', () => {
+		const settingsArgs = { url: manager.getPageUrl( '/wp-admin/admin.php?page=wc-settings&tab=tax&section=fancy' ) };
 		const settings = new WPAdminWCSettingsTaxRates( driver, settingsArgs );
 
 		settings.insertRow();
-		settings.insertRow();
+		settings.setCountryCode( 1, 'US' );
+		settings.setStateCode( 1, 'CA' );
+		settings.setRate( 1, '7.5' );
+		settings.setTaxName( 1, 'CA State Tax' );
 
-		settings.setCountryCode( 1, 'us' );
-		settings.setCountryCode( 2, 'ar' );
-		settings.setStateCode( 2, 'ca' );
-		settings.setStateCode( 1, 'or' );
-		settings.setCity( 2, 'Portland' );
-		settings.setCity( 1, 'Somewhere' );
-		settings.setRate( 1, '12' );
-		settings.setRate( 2, '15' );
-		settings.setTaxName( 1, 'First' );
-		settings.setTaxName( 2, 'Cool tax' );
-		settings.setPriority( 1, '2' );
-		settings.setPriority( 2, '3' );
-		settings.checkCompound( 1 );
-		settings.checkCompound( 2 );
-		settings.uncheckCompound( 1 );
-		settings.uncheckCompound( 2 );
-		settings.checkShipping( 3 );
-		settings.uncheckShipping( 3 );
-		driver.sleep( 4000 );
+		settings.insertRow();
+		settings.setCountryCode( 2, 'US' );
+		settings.setRate( 2, '1.5' );
+		settings.setPriority( 2, '2' );
+		settings.setTaxName( 2, 'Federal Tax' );
+		settings.uncheckShipping( 2 );
+		settings.saveChanges();
 
 		settings.removeRow( 2 );
-		driver.sleep( 10000 );
+		settings.saveChanges();
+		assert.eventually.ifError( helper.isEventuallyPresentAndDisplayed( driver, settings.getSelector( 2 ), 1000 ) );
+	} );
+
+	test.it( 'can remove tax classes', () => {
+		const settingsArgs = { url: manager.getPageUrl( '/wp-admin/admin.php?page=wc-settings&tab=tax' ) };
+		const settings = new WPAdminWCSettingsTax( driver, settingsArgs );
+
+		settings.removeAdditionalTaxClass( 'Fancy' );
+		settings.saveChanges();
+
+		assert.eventually.ifError( settings.hasSubTab( 'Fancy rates' ) );
 	} );
 
 	test.after( 'quit browser', () => {
