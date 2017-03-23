@@ -35,7 +35,7 @@ test.describe( 'WooCommerce Tax Settings', function() {
 		const wpLogin = new WPLogin( driver, { url: manager.getPageUrl( '/wp-login.php' ) } );
 		wpLogin.login( config.get( 'users.admin.username' ), config.get( 'users.admin.password' ) );
 	} );
-
+/*
 	test.it( 'can set tax options', () => {
 		const settingsArgs = { url: manager.getPageUrl( '/wp-admin/admin.php?page=wc-settings&tab=tax' ) };
 		const settings = new WPAdminWCSettingsTax( driver, settingsArgs );
@@ -71,7 +71,7 @@ test.describe( 'WooCommerce Tax Settings', function() {
 
 		assert.eventually.ifError( settings.hasSubTab( 'Fancy rate rates' ) );
 	} );
-
+*/
 	test.it( 'can do something', () => {
 		const settingsArgs = { url: manager.getPageUrl( '/wp-admin/admin.php?page=wc-settings&tab=tax&section=standard' ) };
 		const settings = new WPAdminWCSettingsTaxRates( driver, settingsArgs );
