@@ -41,7 +41,7 @@ export default class WPAdminWCSettings extends WPAdminSettings {
  	* @return {Promise}   Promise that evaluates to `true` if sub-tab is present and displayed, `false` otherwise.
 	*/
 	hasSubTab( subTab ) {
-		return helper.isEventuallyPresentAndDisplayed( this.driver, this._getSubTabSelector( subTab ) );
+		return helper.isEventuallyPresentAndDisplayed( this.driver, this._getSubTabSelector( subTab, { active: false } ) );
 	}
 
 	/**
@@ -108,11 +108,11 @@ export default class WPAdminWCSettings extends WPAdminSettings {
  	* @return {object}    Selector object.
 	*/
 	_getSubTabSelector( subTab, { active = false } ) {
-		let exp = `//ul[contains(@class, "subsubsub")]/li/a[contains(text(), ${ subTab })]`;
+		let exp = `//ul[contains(@class, "subsubsub")]/li/a[contains(text(), "${ subTab }")]`;
 		if ( active ) {
 			exp = `//ul[contains(@class, "subsubsub")]/li/a[contains(@class, "current") and contains(text(), "${ subTab }")]`;
 		}
-
+console.log( exp );
 		return By.xpath( exp );
 	}
 }
