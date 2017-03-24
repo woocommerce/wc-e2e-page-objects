@@ -43,7 +43,6 @@
     "wp-e2e-webdriver": "0.11.0"
   },
   "devDependencies": {
-    "config": "^1.24.0",
     "babel": "^6.5.2",
     "babel-cli": "^6.14.0",
     "babel-eslint": "^7.0.0",
@@ -52,6 +51,8 @@
     "babel-preset-stage-2": "^6.13.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
+    "chromedriver": "^2.25.0",
+    "config": "^1.24.0",
     "cross-env": "^3.0.0",
     "eslint": "^3.11.1",
     "eslint-config-airbnb": "^13.0.0",
@@ -60,11 +61,11 @@
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
     "eslint-plugin-wpcalypso": "^3.0.2",
+    "fs-extra": "^2.1.2",
     "istanbul": "^1.0.0-alpha",
     "jsdoc": "^3.4.3",
     "minami": "^1.1.1",
     "mocha": "^3.0.2",
-    "rimraf": "^2.5.4",
-    "chromedriver": "^2.25.0"
+    "rimraf": "^2.5.4"
   }
 }
