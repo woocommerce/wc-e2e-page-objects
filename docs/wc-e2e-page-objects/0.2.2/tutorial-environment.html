@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>components/component-cart-totals.js - Documentation</title>
+    <title>Tutorial: Environment - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,48 +28,101 @@
 
 <div id="main">
     
-    <h1 class="page-title">components/component-cart-totals.js</h1>
+    <h1 class="page-title">Tutorial: Environment</h1>
     
 
-    
-
-
-
-    
     <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * External dependencies
- */
-import { By } from 'selenium-webdriver';
-import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
-import { Component } from 'wp-e2e-page-objects';
 
-/**
- * External dependencies
- */
+<header>
+    
 
-const SELECTOR = By.css( '.cart_totals' );
+    <h2>Environment</h2>
+</header>
 
-export default class ComponentCartTotals extends Component {
-	constructor( driver, selector = SELECTOR, args = { wait: false, waitMs: 10000 } ) {
-		super( driver, selector, args );
-	}
+<article>
+    <p>The first thing you're going to have to do is set up your environment so that you can run the tests we're going to write. Before getting started with this, you should already have a local or live WordPress site available with WooCommerce installed. I also recommend using the twenty-twelve theme since it doesn't modify the WooCommerce templates, and everything in this tutorial should work without needing special considerations on twenty-twelve.</p>
+<ul>
+<li><p>Create a folder named <code>wc-e2e-page-objects-tutorial</code> for everything to live in.</p>
+</li>
+<li><p>Create a <code>package.json</code> file in the folder, and add the following to <code>package.json</code>:</p>
+</li>
+</ul>
+<pre class="prettyprint source lang-json"><code>{
+    &quot;name&quot;: &quot;wc-e2e-page-objects-tutorial&quot;,
+    &quot;version&quot;: &quot;0.0.1&quot;,
+    &quot;description&quot;: &quot;WooCommerce Page Objects tutorial&quot;,
+    &quot;scripts&quot;: {
+        &quot;test&quot;: &quot;cross-env NODE_CONFIG_DIR='./config' BABEL_ENV=commonjs mocha --compilers js:babel-register --recursive&quot;
+    },
+    &quot;dependencies&quot;: {},
+    &quot;devDependencies&quot;: {
+        &quot;config&quot;: &quot;^1.24.0&quot;,
+        &quot;babel&quot;: &quot;^6.5.2&quot;,
+        &quot;babel-cli&quot;: &quot;^6.14.0&quot;,
+        &quot;babel-eslint&quot;: &quot;^7.0.0&quot;,
+        &quot;babel-plugin-add-module-exports&quot;: &quot;^0.2.1&quot;,
+        &quot;babel-preset-es2015&quot;: &quot;^6.14.0&quot;,
+        &quot;babel-preset-stage-2&quot;: &quot;^6.13.0&quot;,
+        &quot;chai&quot;: &quot;^3.5.0&quot;,
+        &quot;chai-as-promised&quot;: &quot;^6.0.0&quot;,
+        &quot;cross-env&quot;: &quot;^3.0.0&quot;,
+        &quot;istanbul&quot;: &quot;^1.0.0-alpha&quot;,
+        &quot;mocha&quot;: &quot;^3.0.2&quot;,
+        &quot;chromedriver&quot;: &quot;^2.25.0&quot;,
+        &quot;wc-e2e-page-objects&quot;: &quot;0.2.2&quot;
+    }
+}</code></pre><ul>
+<li><p>Run <code>npm install</code>.</p>
+</li>
+<li><p>Create a <code>.babelrc</code> file in the <code>wc-e2e-page-objects-tutorial</code> folder, and add the following to <code>.babelrc</code>:</p>
+</li>
+</ul>
+<pre class="prettyprint source lang-json"><code>{
+    &quot;presets&quot;: [
+        &quot;es2015&quot;,
+        &quot;stage-2&quot;
+    ],
+    &quot;plugins&quot;: [
+        &quot;add-module-exports&quot;
+    ]
+}</code></pre><ul>
+<li><p>Create a folder called <code>config</code> in the <code>wc-e2e-page-objects-tutorial</code> folder.</p>
+</li>
+<li><p>In the <code>config</code> folder created a file called <code>default.json</code> and put the following in <code>default.json</code>:</p>
+</li>
+</ul>
+<pre class="prettyprint source lang-json"><code>{
+    &quot;url&quot;: &quot;http://local.wordpress.dev&quot;,
+    &quot;users&quot;: {
+        &quot;admin&quot;: {
+            &quot;username&quot;: &quot;admin&quot;,
+            &quot;password&quot;: &quot;password&quot;
+        },
+        &quot;customer&quot;: {
+            &quot;username&quot;: &quot;&quot;,
+            &quot;password&quot;: &quot;&quot;
+        }
+    },
+    &quot;startBrowserTimeoutMs&quot;: 30000,
+    &quot;mochaTimeoutMs&quot;: 120000
+}</code></pre><p>For this tutorial, go ahead and put your actual site URL and admin credentials in config.json. If you're using a live site for testing, make sure you don't expose your credentials by committing them to GitHub or something.</p>
+<ul>
+<li><p>Create a folder called <code>tests</code>.</p>
+</li>
+<li><p>You should have the following before moving on to the fun part (writing the tests):</p>
+</li>
+</ul>
+<pre class="prettyprint source lang-json"><code>wc-e2e-page-objects-tutorial folder
+    package.json file
+    .babelrc file
+    config folder
+        default.json file
+    tests folder
+    node_modules folder with dependencies installed in it</code></pre><p>Ready to move on?</p>
+<h2><a href="tutorial-first-test.html">Writing your first tests.</a></h2>
+</article>
 
-	hasSubtotal( subtotal ) {
-		const selector = By.xpath( `//tr[@class="cart-subtotal" and .//span[contains(text(), "${ subtotal }")]]` );
-		return helper.isEventuallyPresentAndDisplayed(
-			this.driver,
-			selector
-		);
-	}
-}
-</code></pre>
-        </article>
-    </section>
-
-
-
+</section>
 
 </div>
 

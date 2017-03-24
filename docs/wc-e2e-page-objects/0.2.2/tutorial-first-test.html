@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>components/component-cart-totals.js - Documentation</title>
+    <title>Tutorial: Writing your first tests - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,48 +28,115 @@
 
 <div id="main">
     
-    <h1 class="page-title">components/component-cart-totals.js</h1>
+    <h1 class="page-title">Tutorial: Writing your first tests</h1>
     
 
-    
-
-
-
-    
     <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * External dependencies
- */
-import { By } from 'selenium-webdriver';
-import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
-import { Component } from 'wp-e2e-page-objects';
 
-/**
- * External dependencies
- */
+<header>
+    
 
-const SELECTOR = By.css( '.cart_totals' );
+    <h2>Writing your first tests</h2>
+</header>
 
-export default class ComponentCartTotals extends Component {
-	constructor( driver, selector = SELECTOR, args = { wait: false, waitMs: 10000 } ) {
-		super( driver, selector, args );
-	}
+<article>
+    <p>In this section we are going to write a test suite that adds a product to the Cart from the Shop page, navigates to the Cart, and verifies the product is present in the Cart.</p>
+<ul>
+<li><p>In order to go to the Shop page and add some items, we're going to need a <a href="module-ShopPage.html">ShopPage</a> object. In order to go to the Cart page and check the items, we're going to need a <a href="module-CartPage.html">CartPage</a> object.</p>
+</li>
+<li><p>Create a file called <code>frontend-tests.js</code> in your tests folder.</p>
+</li>
+<li><p>Put the following into <code>frontend-tests.js</code>:</p>
+</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>import config from 'config';
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+import test from 'selenium-webdriver/testing';
 
-	hasSubtotal( subtotal ) {
-		const selector = By.xpath( `//tr[@class="cart-subtotal" and .//span[contains(text(), "${ subtotal }")]]` );
-		return helper.isEventuallyPresentAndDisplayed(
-			this.driver,
-			selector
-		);
-	}
-}
-</code></pre>
-        </article>
-    </section>
+// Helper objects for performing actions.
+import { WebDriverManager, WebDriverHelper as helper } from 'wp-e2e-webdriver';
 
+// We're going to use the ShopPage and CartPage objects for this tutorial.
+import { ShopPage, CartPage } from 'wc-e2e-page-objects';
 
+chai.use( chaiAsPromised );
+const assert = chai.assert;
 
+let manager;
+let driver;
+
+test.describe( 'Frontend Tests', function() {
+
+    // Set up the driver and manager before testing starts.
+    test.before( 'open browser', function() {
+        this.timeout( config.get( 'startBrowserTimeoutMs' ) );
+
+        manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
+        driver = manager.getDriver();
+
+        helper.clearCookiesAndDeleteLocalStorage( driver );
+    } );
+
+    this.timeout( config.get( 'mochaTimeoutMs' ) );
+
+    // Tests will go here.
+
+    // Close the browser after finished testing.
+    test.after( 'quit browser', () => {
+        manager.quitBrowser();
+    } );
+
+} );</code></pre><p>This is the standard boilerplate for writing a test suite. Feel free to copy + paste this template for your test suites. You only have to change the components you are importing from <code>wc-e2e-page-objects</code> to import the actual ones you're going to need.</p>
+<ul>
+<li><p>Give everything a test run with <code>npm run test</code>. If everything is working correctly, you should see a success message like <code>0 passing (2ms)</code> in your terminal. If you get a bunch of <code>npm ERR!</code> instead, please go back and make sure you have all of the necessary files in your environment.</p>
+</li>
+<li><p>Add a test in between <code>this.timeout()</code> and <code>test.after()</code>:</p>
+</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>test.it( 'Adds the product to the cart when &quot;Add to cart&quot; is clicked', () => {
+
+    // Create a new Shop page object. 
+    const shopPage = new ShopPage( driver, { url: manager.getPageUrl( '/shop' ) } );
+
+    // Add a couple products to the cart.
+    // If you're not using the WooCommerce dummy data, use any simple products on your shop's first page.
+    const added_flying = shopPage.addProductToCart( 'Flying Ninja' );
+    const added_happy = shopPage.addProductToCart( 'Happy Ninja' );
+
+    // Verify products were added to cart successfully.
+    // Page action methods return promises that evaluate to true if the action is performed successfully.
+    assert.eventually.ok( added_flying );
+    assert.eventually.ok( added_happy );
+
+    // Create a new Cart page object.
+    const cartPage = new CartPage( driver, { url: manager.getPageUrl( '/cart' ) } );
+
+    // Check the cart for the items added earlier.
+    const has_flying = cartPage.hasItem( 'Flying Ninja' );
+    const has_happy = cartPage.hasItem( 'Happy Ninja' );
+
+    // Verify the cart has the items.
+    assert.eventually.ok( has_flying );
+    assert.eventually.ok( has_happy );
+
+} );</code></pre><ul>
+<li><p><code>npm run test</code> to run the test suite.</p>
+</li>
+<li><p>You should get some success output like:</p>
+</li>
+</ul>
+<pre class="prettyprint source"><code>  Frontend Tests
+    ✓ Adds the product to the cart when &quot;Add to cart&quot; is clicked (2577ms)
+
+  1 passing (5s)</code></pre><ul>
+<li>Using this methodology, you can write tests for any action a customer could perform on a WooCommerce site and verify those actions will be successful, without having to manually go and try it yourself to make sure everything is working OK.</li>
+</ul>
+<p>Ready to move on?</p>
+<h2><a href="tutorial-admin-test.html">Writing admin screen tests.</a></h2>
+</article>
+
+</section>
 
 </div>
 
