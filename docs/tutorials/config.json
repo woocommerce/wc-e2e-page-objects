@@ -2,7 +2,13 @@
 	"overview": {
 		"title": "Overview"
 	},
-	"quick-start": {
-		"title": "Quick start"
+	"environment": {
+		"title": "Environment"
+	},
+	"first-test": {
+		"title": "Writing your first tests"
+	},
+	"admin-test": {
+		"title": "Writing admin screen tests"
 	}
 }
