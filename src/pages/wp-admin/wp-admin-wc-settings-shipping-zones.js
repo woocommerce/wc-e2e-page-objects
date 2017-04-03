@@ -61,9 +61,16 @@ export default class WPAdminWCSettingsShippingZones extends WPAdminWCSettings {
 	 * Click on the "Delete" link on a shipping zone.
 	 *
 	 * @param  {string}   Name of shipping zone to delete.
-	 * @return {Promise}  Promise that evaluates to `true` if zone found and delete clicked successfully, `false` otherwise.
+	 * @return {Promise}  Promise that evaluates to `true` if zone found and deleted successfully, `false` otherwise.
 	 */
 	deleteShippingZone( zone ) {
+		const container_selector = By.xpath( `//td[contains(@class, "wc-shipping-zone-name")]/a[contains(text(), "${ zone }")]` );
+		const delete_selector = By.xpath( `//td[contains(@class, "wc-shipping-zone-name")]/a[contains(text(), "${ zone }")]/..//a[contains(@class, "wc-shipping-zone-delete")]` );
 
+		helper.mouseMoveTo( this.driver, container_selector );
+		return helper.clickWhenClickable( this.driver, delete_selector ).then(
+			() => { return wcHelper.waitTillAlertAccepted( this.driver ); },
+			() => { return false; }
+		);
 	}
 }

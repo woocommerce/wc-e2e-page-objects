@@ -43,9 +43,11 @@ test.describe( 'WooCommerce Shipping Settings', function() {
 		assert.eventually.ok( settings.hasActiveTab( 'Shipping' ) );
 		assert.eventually.ok( settings.hasActiveSubTab( 'Shipping zones' ) );
 
-		settings.editShippingZone( 'Rest of the World' );
+		settings.deleteShippingZone( 'Test' );
 
-		const zone = new WPAdminWCSettingsSingleShippingZone( driver );
+//		settings.editShippingZone( 'Rest of the World' );
+
+//		const zone = new WPAdminWCSettingsSingleShippingZone( driver );
 		driver.sleep( 3000 );
 
 	} );
