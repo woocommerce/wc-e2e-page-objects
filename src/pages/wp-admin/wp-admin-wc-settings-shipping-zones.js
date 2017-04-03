@@ -13,27 +13,16 @@ import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
  */
 import * as wcHelper from '../../helper';
 import WPAdminWCSettings from './wp-admin-wc-settings';
-/*
-const BASE_LOCATION_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_default_country' );
-const SELLING_LOCATION_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_allowed_countries' );
-const SELL_TO_SPECIFIC_COUNTRIES_SELECTOR = wcHelper.getSelect2ToggleSelectorByName(
-	'woocommerce_specific_allowed_countries[]', { multiple: true }
-);
-const ENABLE_TAXES_SELECTOR = By.css( '#woocommerce_calc_taxes' );
-const STORE_NOTICE_SELECTOR = By.css( '#woocommerce_demo_store' );
-const CURRENCY_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_currency' );
-const CURRENCY_POSITION_SELECTOR = wcHelper.getSelect2ToggleSelectorByName( 'woocommerce_currency_pos' );
-const THOUSAND_SEPARATOR_SELECTOR = By.css( '#woocommerce_price_thousand_sep' );
-const DECIMAL_SEPARATOR_SELECTOR = By.css( '#woocommerce_price_decimal_sep' );
-const NUMBER_OF_DECIMALS_SELECTOR = By.css( '#woocommerce_price_num_decimals' );
-*/
+
+const ADD_SHIPPING_ZONE_SELECTOR = By.css( '.wc-shipping-zones-heading .page-title-action' );
+
 const defaultArgs = {
 	url: '',
-	visit: true,
+	visit: true
 };
 
 /**
- * The General admin settings screen
+ * The main Shipping Zones settings page
  *
  * @extends WPAdminWCSettings
  */
@@ -48,4 +37,33 @@ export default class WPAdminWCSettingsShippingZones extends WPAdminWCSettings {
 		super( driver, args );
 	}
 
+	/**
+	 * Click the "Add Shipping Zone" button
+	 *
+	 * return {Promise} Promise that evaluates to `true` if clicked successfully, `false` otherwise.
+	 */
+	addShippingZone() {
+		return helper.clickWhenClickable( this.driver, ADD_SHIPPING_ZONE_SELECTOR );
+	}
+
+	/**
+	 * Click on a shipping zone to edit it.
+	 *
+	 * @param  {string}   Name of shipping zone to edit.
+	 * @return {Promise}  Promise that evaluates to `true` if zone found and clicked successfully, `false` otherwise.
+	 */
+	editShippingZone( zone ) {
+		const selector = By.xpath( `//td[contains(@class, "wc-shipping-zone-name")]/a[contains(text(), "${ zone }")]` );
+		return helper.clickWhenClickable( this.driver, selector );
+	}
+
+	/**
+	 * Click on the "Delete" link on a shipping zone.
+	 *
+	 * @param  {string}   Name of shipping zone to delete.
+	 * @return {Promise}  Promise that evaluates to `true` if zone found and delete clicked successfully, `false` otherwise.
+	 */
+	deleteShippingZone( zone ) {
+
+	}
 }

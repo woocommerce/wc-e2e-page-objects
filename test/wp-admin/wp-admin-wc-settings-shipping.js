@@ -11,7 +11,7 @@ import { WPLogin } from 'wp-e2e-page-objects';
 /**
  * Internal dependencies
  */
-import { WPAdminWCSettingsShippingZones } from '../../src/index';
+import { WPAdminWCSettingsShippingZones, WPAdminWCSettingsSingleShippingZone } from '../../src/index';
 
 chai.use( chaiAsPromised );
 const assert = chai.assert;
@@ -42,6 +42,11 @@ test.describe( 'WooCommerce Shipping Settings', function() {
 
 		assert.eventually.ok( settings.hasActiveTab( 'Shipping' ) );
 		assert.eventually.ok( settings.hasActiveSubTab( 'Shipping zones' ) );
+
+		settings.editShippingZone( 'Rest of the World' );
+
+		const zone = new WPAdminWCSettingsSingleShippingZone( driver );
+		driver.sleep( 3000 );
 
 	} );
 
