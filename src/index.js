@@ -20,6 +20,7 @@ import WPAdminWCSettings from './pages/wp-admin/wp-admin-wc-settings';
 import WPAdminWCSettingsGeneral from './pages/wp-admin/wp-admin-wc-settings-general';
 import WPAdminWCSettingsTax from './pages/wp-admin/wp-admin-wc-settings-tax';
 import WPAdminWCSettingsTaxRates from './pages/wp-admin/wp-admin-wc-settings-tax-rates';
+import WPAdminWCSettingsShippingZones from './pages/wp-admin/wp-admin-wc-settings-shipping-zones';
 import WPAdminWCSettingsProductsGeneral from './pages/wp-admin/wp-admin-wc-settings-products-general';
 import WPAdminWCSettingsProductsDownloadable from './pages/wp-admin/wp-admin-wc-settings-products-downloadable';
 import StoreOwnerFlow from './flows/store-owner-flow';
@@ -46,6 +47,7 @@ export {
 	WPAdminWCSettingsGeneral,
 	WPAdminWCSettingsTax,
 	WPAdminWCSettingsTaxRates,
+	WPAdminWCSettingsShippingZones,
 	WPAdminWCSettingsProductsDownloadable,
 	WPAdminWCSettingsProductsGeneral,
 	StoreOwnerFlow,

@@ -33,6 +33,14 @@ export default class StoreOwnerFlow extends UserFlow {
 		return this.open( PAGE.WP_ADMIN_WC_SETTINGS_GENERAL );
 	}
 
+	openTaxSettings() {
+		return this.open( PAGE.WP_ADMIN_WC_SETTINGS_TAX );
+	}
+
+	openShippingZonesSettings() {
+		return this.open( PAGE.WP_ADMIN_WC_SETTINGS_SHIPPING_ZONES );
+	}
+
 	setGeneralSettings( args ) {
 		const settings = this.openGeneralSettings();
 

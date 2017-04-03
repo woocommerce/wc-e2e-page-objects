@@ -19,6 +19,7 @@ import WPAdminCouponEdit from './pages/wp-admin/wp-admin-coupon-edit';
 import WPAdminCouponNew from './pages/wp-admin/wp-admin-coupon-new';
 import WPAdminCoupons from './pages/wp-admin/wp-admin-coupons';
 import WPAdminWCSettingsTax from './pages/wp-admin/wp-admin-wc-settings-tax';
+import WPAdminWCSettingsShippingZones from './pages/wp-admin/wp-admin-wc-settings-shipping-zones';
 import WPAdminWCSettingsGeneral from './pages/wp-admin/wp-admin-wc-settings-general';
 import WPAdminWCSettingsCheckout from './pages/wp-admin/wp-admin-wc-settings-checkout';
 import WPAdminWCSettingsCheckoutBACS from './pages/wp-admin/wp-admin-wc-settings-checkout-bacs';
@@ -83,6 +84,10 @@ export const PAGE = Object.assign(
 		WP_ADMIN_WC_SETTINGS_TAX: {
  			object: WPAdminWCSettingsTax,
  			path: '/wp-admin/admin.php?page=wc-settings&tab=tax'
+ 		},
+ 		WP_ADMIN_WC_SETTINGS_SHIPPING_ZONES: {
+ 			object: WPAdminWCSettingsShippingZones,
+ 			path: '/wp-admin/admin.php?page=wc-settings&tab=shipping'
  		},
 		WP_ADMIN_WC_SETTINGS_CHECKOUT: {
 			object: WPAdminWCSettingsCheckout,
