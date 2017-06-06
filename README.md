@@ -14,8 +14,8 @@ npm install wc-page-objects
 ```
 
 ## Docs
-- [API](https://woocommerce.github.io/wc-e2e-page-objects/wc-e2e-page-objects/0.2.2/)
-- [Tutorial](https://woocommerce.github.io/wc-e2e-page-objects/wc-e2e-page-objects/0.2.2/tutorial-overview.html)
+- [API](https://woocommerce.github.io/wc-e2e-page-objects/wc-e2e-page-objects/0.3.0/)
+- [Tutorial](https://woocommerce.github.io/wc-e2e-page-objects/wc-e2e-page-objects/0.3.0/tutorial-overview.html)
 
 ## Usage
 
