@@ -88,7 +88,7 @@ export default class WPAdminWCSettings extends WPAdminSettings {
 	* Get the tab selector for a settings tab (Internal use only).
 	*
  	* @param  {string}    tab - Text in the tab.
- 	* @param  {object}.   args - Options. Default { active = false }.
+ 	* @param  {object}    args - Options. Default { active = false }.
  	* @return {object}    Selector object.
 	*/
 	_getTabSelector( tab, { active = false } ) {
@@ -104,7 +104,7 @@ export default class WPAdminWCSettings extends WPAdminSettings {
 	* Get the sub-tab selector for a settings sub-tab (Internal use only).
 	*
  	* @param  {string}    subTab - Text in the sub-tab.
- 	* @param  {object}.   args - Options. Default { active = false }.
+ 	* @param  {object}    args - Options. Default { active = false }.
  	* @return {object}    Selector object.
 	*/
 	_getSubTabSelector( subTab, { active = false } ) {

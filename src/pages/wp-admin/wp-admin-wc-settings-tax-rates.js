@@ -11,7 +11,6 @@ import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 /**
  * Internal Dependencies
  */
-import * as wcHelper from '../../helper';
 import WPAdminWCSettings from './wp-admin-wc-settings';
 
 const INSERT_ROW_SELECTOR = By.css( '.button.insert' );
@@ -199,10 +198,10 @@ export default class WPAdminWCSettingsTaxRates extends WPAdminWCSettings {
 	 * Get the selector for an element in the tax rate form.
 	 *
 	 * @param  {int}       row - Row number element is in.
-	 * @param  {string}    child_el - An optional CSS selector to look for inside the row. Default: ''
+	 * @param  {string}    childEl - An optional CSS selector to look for inside the row. Default: ''
 	 * @return {object}    selector
 	 */
-	getSelector( row, child_el = '' ) {
-		return By.css( `#rates tr:nth-child(${ row }) ${ child_el }` );
+	getSelector( row, childEl = '' ) {
+		return By.css( `#rates tr:nth-child(${ row }) ${ childEl }` );
 	}
 }

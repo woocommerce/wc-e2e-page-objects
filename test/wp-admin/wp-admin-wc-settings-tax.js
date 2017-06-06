@@ -11,7 +11,7 @@ import { WPLogin } from 'wp-e2e-page-objects';
 /**
  * Internal dependencies
  */
-import { WPAdminWCSettingsTax , WPAdminWCSettingsTaxRates } from '../../src/index';
+import { WPAdminWCSettingsTax, WPAdminWCSettingsTaxRates } from '../../src/index';
 
 chai.use( chaiAsPromised );
 const assert = chai.assert;

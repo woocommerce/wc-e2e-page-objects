@@ -108,7 +108,7 @@ export default class WPAdminWCSettingsTax extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if input found and set successfully, `false` otherwise.
 	*/
 	removeAdditionalTaxClasses() {
-		helper.setWhenSettable( this.driver, ADDITIONAL_TAX_CLASSES_SELECTOR, "" );
+		return helper.setWhenSettable( this.driver, ADDITIONAL_TAX_CLASSES_SELECTOR, '' );
 	}
 
 	/**
@@ -122,8 +122,8 @@ export default class WPAdminWCSettingsTax extends WPAdminWCSettings {
 
 		return this.driver.findElement( ADDITIONAL_TAX_CLASSES_SELECTOR ).then(
 			function( element ) {
-				return element.getAttribute( 'value' ).then( ( el_value ) => {
-					return helper.setWhenSettable( driver, ADDITIONAL_TAX_CLASSES_SELECTOR, ( el_value + '\n' + value ).trim() );
+				return element.getAttribute( 'value' ).then( ( elValue ) => {
+					return helper.setWhenSettable( driver, ADDITIONAL_TAX_CLASSES_SELECTOR, ( elValue + '\n' + value ).trim() );
 				} );
 			},
 			function() {
@@ -143,8 +143,8 @@ export default class WPAdminWCSettingsTax extends WPAdminWCSettings {
 
 		return this.driver.findElement( ADDITIONAL_TAX_CLASSES_SELECTOR ).then(
 			function( element ) {
-				return element.getAttribute( 'value' ).then( ( el_value ) => {
-					return helper.setWhenSettable( driver, ADDITIONAL_TAX_CLASSES_SELECTOR, el_value.replace( new RegExp( `${value}\n?` ), '' ) );
+				return element.getAttribute( 'value' ).then( ( elValue ) => {
+					return helper.setWhenSettable( driver, ADDITIONAL_TAX_CLASSES_SELECTOR, elValue.replace( new RegExp( `${ value }\n?` ), '' ) );
 				} );
 			},
 			function() {
@@ -161,7 +161,6 @@ export default class WPAdminWCSettingsTax extends WPAdminWCSettings {
 	*/
 	selectDisplayPricesInTheShop( option ) {
 		return wcHelper.select2Option( this.driver, DISPLAY_PRICES_IN_THE_SHOP_SELECTOR, option );
-
 	}
 
 	/**
@@ -172,7 +171,6 @@ export default class WPAdminWCSettingsTax extends WPAdminWCSettings {
 	*/
 	selectDisplayPricesDuringCartAndCheckout( option ) {
 		return wcHelper.select2Option( this.driver, DISPLAY_PRICES_DURING_CART_CHECKOUT_SELECTOR, option );
-
 	}
 
 	/**

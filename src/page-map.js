@@ -81,9 +81,9 @@ export const PAGE = Object.assign(
 			path: '/wp-admin/admin.php?page=wc-settings'
 		},
 		WP_ADMIN_WC_SETTINGS_TAX: {
- 			object: WPAdminWCSettingsTax,
- 			path: '/wp-admin/admin.php?page=wc-settings&tab=tax'
- 		},
+			object: WPAdminWCSettingsTax,
+			path: '/wp-admin/admin.php?page=wc-settings&tab=tax'
+		},
 		WP_ADMIN_WC_SETTINGS_CHECKOUT: {
 			object: WPAdminWCSettingsCheckout,
 			path: '/wp-admin/admin.php?page=wc-settings&tab=checkout'
