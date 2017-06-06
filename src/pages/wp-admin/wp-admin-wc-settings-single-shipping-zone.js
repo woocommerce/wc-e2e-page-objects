@@ -14,6 +14,13 @@ import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 import * as wcHelper from '../../helper';
 import WPAdminWCSettings from './wp-admin-wc-settings';
 
+const ZONE_NAME_SELECTOR = By.css( '#zone_name' );
+const ZONE_REGION_SELECTOR = By.css( '.select2-selection--multiple' );
+const LIMIT_TO_SPECIFIC_ZIP_CODES_TOGGLE_SELECTOR = By.css( '.wc-shipping-zone-postcodes-toggle' );
+const LIMIT_TO_SPECIFIC_ZIP_CODES_INPUT_SELECTOR = By.css( '#zone_postcodes' );
+const ADD_SHIPPING_METHOD_SELECTOR = By.css( '.wc-shipping-zone-add-method' );
+const SAVE_SELECTOR = By.css( '.wc-shipping-zone-method-save' );
+
 /**
  * The settings screen for one shipping zone
  */
@@ -26,9 +33,14 @@ export default class WPAdminWCSettingsSingleShippingZone {
 		this.driver = driver;
 	}
 
-	//setZoneName
+	setZoneName( value ) {
+		return helper.setWhenSettable( this.driver, ZONE_NAME_SELECTOR, value );
+	}
 
-	//addZoneRegion
+	addZoneRegion( keyword, option ) {
+		helper.mouseMoveTo( this.driver, ZONE_REGION_SELECTOR );
+		return wcHelper.setSelect2WithSearch( this.driver, ZONE_REGION_SELECTOR, keyword, option );
+	}
 
 	//removeZoneRegion
 
@@ -41,6 +53,8 @@ export default class WPAdminWCSettingsSingleShippingZone {
 	//addShippingMethod
 
 	//editShippingMethod
+
+	//deleteShippingMethod
 
 	//toggleShippingMethod
 }

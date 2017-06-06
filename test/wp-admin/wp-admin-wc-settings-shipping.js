@@ -43,7 +43,12 @@ test.describe( 'WooCommerce Shipping Settings', function() {
 		assert.eventually.ok( settings.hasActiveTab( 'Shipping' ) );
 		assert.eventually.ok( settings.hasActiveSubTab( 'Shipping zones' ) );
 
-		settings.deleteShippingZone( 'Test' );
+		settings.addShippingZone();
+
+		const zone = new WPAdminWCSettingsSingleShippingZone( driver );
+		zone.setZoneName( "Test" );
+		zone.addZoneRegion( "romania", "Romania" );
+		driver.sleep( 3000 );
 
 //		settings.editShippingZone( 'Rest of the World' );
 
