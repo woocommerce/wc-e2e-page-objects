@@ -47,13 +47,11 @@ test.describe( 'WooCommerce Shipping Settings', function() {
 
 		const zone = new WPAdminWCSettingsSingleShippingZone( driver );
 		zone.setZoneName( "Test" );
-		zone.addZoneRegion( "romania", "Romania" );
-		driver.sleep( 3000 );
-
-//		settings.editShippingZone( 'Rest of the World' );
-
-//		const zone = new WPAdminWCSettingsSingleShippingZone( driver );
-		driver.sleep( 3000 );
+		zone.addZoneRegion( "alabama", "Alabama" );
+		driver.sleep( 1000 );
+		zone.removeZoneRegion( "ZAlabama" );
+		zone.openLimitToSpecificZipCodes();
+		driver.sleep( 5000 );
 
 	} );
 

@@ -168,3 +168,23 @@ export function setSelect2WithSearch( driver, selector, keyword, option ) {
 	const optionSelector = By.xpath( `//li[contains(@class, "select2-results__option") and contains(.,"${ option }")]` );
 	return helper.clickWhenClickable( driver, optionSelector );
 }
+
+/**
+ * Click if clickable and don't trigger an error if not.
+ *
+ * @param {WebDriver} driver   - Instance of WebDriver.
+ * @param {object}    selector - The selector for the element.
+ * @return {Promise}  A promise that will be resolved to `true` if the option is found and selected,
+ *                    or `false` if unable to find and select the element.
+ */
+export function clickIfClickable( driver, selector ) {
+	return driver.findElement( selector ).then( ( el ) => {
+		return el.click().then( () => {
+			return true;
+		}, () => {
+			return false;
+		} );
+	}, () => {
+		return false;
+	} );
+}

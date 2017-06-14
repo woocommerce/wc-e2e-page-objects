@@ -42,11 +42,18 @@ export default class WPAdminWCSettingsSingleShippingZone {
 		return wcHelper.setSelect2WithSearch( this.driver, ZONE_REGION_SELECTOR, keyword, option );
 	}
 
-	//removeZoneRegion
+	removeZoneRegion( option ) {
+		const selector = By.xpath(
+			`//li[contains(@class,"select2-selection__choice") and contains(.,"${ option }")]` +
+			'/span[contains(@class,"select2-selection__choice__remove")]'
+		);
 
-	//isOpenLimitToSpecificZipCodes
+		return wcHelper.clickIfClickable( this.driver, selector );
+	}
 
-	//openLimitToSpecificZipCodes
+	openLimitToSpecificZipCodes() {
+		return wcHelper.clickIfClickable( this.driver, LIMIT_TO_SPECIFIC_ZIP_CODES_TOGGLE_SELECTOR );
+	}
 
 	//setLimitToSpecificZipCodes
 
