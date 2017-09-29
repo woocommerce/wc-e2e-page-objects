@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { UserFlow } from 'wp-e2e-page-objects';
+import { WebDriverManager, WebDriverHelper as helper } from 'wp-e2e-webdriver';
 
 /**
  * Internal dependencies.
@@ -46,13 +47,19 @@ export default class StoreOwnerFlow extends UserFlow {
 			args
 		);
 
+		// This needs to happen first and save, otherwise the base location settings won't
+		// have the latest dropdown options.
+		if ( args.sellingLocation ) {
+			settings.selectSellingLocation( args.sellingLocation );
+			helper.scrollDown( this.driver );
+			settings.saveChanges();
+		}
+
 		if ( Array.isArray( args.baseLocation ) && 2 === args.baseLocation.length ) {
 			settings.selectBaseLocation( ...args.baseLocation );
 		}
 
-		if ( args.sellingLocation ) {
-			settings.selectSellingLocation( args.sellingLocation );
-		}
+		helper.scrollDown( this.driver );
 
 		if ( args.enableTaxes ) {
 			settings.checkEnableTaxes();
@@ -84,6 +91,7 @@ export default class StoreOwnerFlow extends UserFlow {
 	enablePayPal() {
 		this.open( PAGE.WP_ADMIN_WC_SETTINGS_CHECKOUT_PAYPAL );
 		this.currentPage.checkEnable();
+		helper.scrollDown( this.driver );
 		return this.currentPage.saveChanges();
 	}
 }
