@@ -2,7 +2,7 @@
  * External dependencies
  */
 import { UserFlow } from 'wp-e2e-page-objects';
-import { WebDriverManager, WebDriverHelper as helper } from 'wp-e2e-webdriver';
+import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 
 /**
  * Internal dependencies.
