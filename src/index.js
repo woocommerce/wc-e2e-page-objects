@@ -11,6 +11,7 @@ import ComponentOrderDetails from './components/component-order-details';
 import ComponentOrderCustomerDetails from './components/component-order-customer-details';
 import ComponentOrderBillingAddress from './components/component-order-billing-address';
 import ComponentOrderShippingAddress from './components/component-order-shipping-address';
+import SingleProductPage from './pages/single-product-page.js';
 import CartPage from './pages/cart-page';
 import CheckoutPage from './pages/checkout-page';
 import CheckoutOrderReceivedPage from './pages/checkout-order-received-page';
@@ -37,6 +38,7 @@ export {
 	ComponentOrderCustomerDetails,
 	ComponentOrderBillingAddress,
 	ComponentOrderShippingAddress,
+	SingleProductPage,
 	CartPage,
 	CheckoutPage,
 	CheckoutOrderReceivedPage,
