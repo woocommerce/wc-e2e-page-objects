@@ -25,7 +25,6 @@ test.describe( 'WooCommerce Tax Settings', function() {
 
 		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
 		driver = manager.getDriver();
-		driver.manage().window().maximize();
 
 		helper.clearCookiesAndDeleteLocalStorage( driver );
 	} );

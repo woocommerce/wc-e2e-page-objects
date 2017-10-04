@@ -39,7 +39,6 @@ test.describe( 'Checkout Page', function() {
 
 		manager = new WebDriverManager( 'chrome', { baseUrl: config.get( 'url' ) } );
 		driver = manager.getDriver();
-		driver.manage().window().maximize();
 
 		helper.clearCookiesAndDeleteLocalStorage( driver );
 
@@ -123,7 +122,6 @@ test.describe( 'Checkout Page', function() {
 		assert.eventually.ok( shippingDetails.selectCountry( 'united states', 'United States (US)' ) );
 		assert.eventually.ok( shippingDetails.setAddress1( 'addr 1' ) );
 		assert.eventually.ok( shippingDetails.setAddress2( 'addr 2' ) );
-		helper.scrollDown( driver );
 		assert.eventually.ok( shippingDetails.setCity( 'San Francisco' ) );
 		assert.eventually.ok( shippingDetails.selectState( 'cali', 'California' ) );
 		assert.eventually.ok( shippingDetails.setZip( '94107' ) );
@@ -148,7 +146,6 @@ test.describe( 'Checkout Page', function() {
 		billingDetails.selectState( 'cali', 'California' );
 		billingDetails.setZip( '94107' );
 		checkoutPage.selectPaymentMethod( 'Cash on delivery' );
-		helper.scrollDown( driver );
 		checkoutPage.placeOrder();
 		wcHelper.waitTillUIBlockNotPresent( driver );
 
