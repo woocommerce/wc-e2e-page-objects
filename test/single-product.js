@@ -41,7 +41,6 @@ test.describe( 'Single Product Page', function() {
 		assert.eventually.equal( cartPage.hasItem( 'Happy Ninja', { qty: 5 } ), true );
 	});
 
-
 	test.it( 'should be able to add variation products to the cart', () => {
 		const variableProductPage = new SingleProductPage( driver, { url: manager.getPageUrl( '/product/ship-your-idea-3/' ) } );
 		variableProductPage.selectVariation( 'Color', 'Green' );
