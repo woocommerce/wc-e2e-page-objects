@@ -39,7 +39,7 @@
   "homepage": "https://github.com/woocommerce/wc-e2e-page-objects",
   "dependencies": {
     "lodash": "^4.13.1",
-    "wp-e2e-page-objects": "0.6.0",
+    "wp-e2e-page-objects": "0.7.0",
     "wp-e2e-webdriver": "0.11.0"
   },
   "devDependencies": {
@@ -51,7 +51,7 @@
     "babel-preset-stage-2": "^6.13.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "chromedriver": "^2.33.0",
+    "chromedriver": "2.33.0",
     "config": "^1.24.0",
     "cross-env": "^3.0.0",
     "eslint": "^3.11.1",
