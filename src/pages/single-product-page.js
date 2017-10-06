@@ -12,6 +12,10 @@ import { Page } from 'wp-e2e-page-objects';
 const ADD_TO_CART_BUTTON_SELECTOR = By.css( 'button.single_add_to_cart_button' );
 const QUANTITY_SELECTOR = By.css( 'input[name="quantity"]' );
 
+const defaultArgs = {
+	visit: true
+}
+
 /**
  * The front-end Single Product page.
  *
@@ -24,6 +28,7 @@ export default class SingleProductPage extends Page {
  	* @param {object}    args     - Configuration arguments.
 	*/
 	constructor( driver, args = {} ) {
+		args = Object.assign( defaultArgs, args );
 		super( driver, args );
 	}
 

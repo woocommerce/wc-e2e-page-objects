@@ -43,9 +43,13 @@ test.describe( 'Single Product Page', function() {
 
 	test.it( 'should be able to add variation products to the cart', () => {
 		const variableProductPage = new SingleProductPage( driver, { url: manager.getPageUrl( '/product/ship-your-idea-3/' ) } );
-		variableProductPage.selectVariation( 'Color', 'Green' );
-		variableProductPage.addToCart();
 		variableProductPage.selectVariation( 'Color', 'Black' );
+		variableProductPage.addToCart();
+
+		// Pause for a half-second. Driver goes to fast and makes wrong selections otherwise.
+		driver.sleep( 500 );
+
+		variableProductPage.selectVariation( 'Color', 'Green' );
 		variableProductPage.addToCart();
 
 		const cartPage = new CartPage( driver, { url: manager.getPageUrl( '/cart' ) } );
