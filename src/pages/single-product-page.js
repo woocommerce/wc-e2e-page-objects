@@ -14,7 +14,7 @@ const QUANTITY_SELECTOR = By.css( 'input[name="quantity"]' );
 
 const defaultArgs = {
 	visit: true
-}
+};
 
 /**
  * The front-end Single Product page.
@@ -44,7 +44,8 @@ export default class SingleProductPage extends Page {
 	/**
 	* Set the quantity field.
 	*
- 	* @param {integer}   Quantity.
+ 	* @param {integer}   quantity - Amount to set to
+ 	* @return {void}
 	*/
 	setQuantity( quantity ) {
 		const el = this.driver.findElement( QUANTITY_SELECTOR );

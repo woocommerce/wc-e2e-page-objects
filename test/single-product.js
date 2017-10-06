@@ -10,7 +10,6 @@ import { WebDriverManager, WebDriverHelper as helper } from 'wp-e2e-webdriver';
 /**
  * Internal dependencies
  */
-import * as wcHelper from '../src/helper';
 import { SingleProductPage, CartPage } from '../src/index';
 
 chai.use( chaiAsPromised );
@@ -39,7 +38,7 @@ test.describe( 'Single Product Page', function() {
 
 		const cartPage = new CartPage( driver, { url: manager.getPageUrl( '/cart' ) } );
 		assert.eventually.equal( cartPage.hasItem( 'Happy Ninja', { qty: 5 } ), true );
-	});
+	} );
 
 	test.it( 'should be able to add variation products to the cart', () => {
 		const variableProductPage = new SingleProductPage( driver, { url: manager.getPageUrl( '/product/ship-your-idea-3/' ) } );
@@ -55,7 +54,7 @@ test.describe( 'Single Product Page', function() {
 		const cartPage = new CartPage( driver, { url: manager.getPageUrl( '/cart' ) } );
 		assert.eventually.equal( cartPage.hasItem( 'Ship Your Idea - Black' ), true );
 		assert.eventually.equal( cartPage.hasItem( 'Ship Your Idea - Green' ), true );
-	});
+	} );
 
 	test.after( 'quit browser', () => {
 		manager.quitBrowser();

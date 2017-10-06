@@ -47,7 +47,7 @@ export default class StoreOwnerFlow extends UserFlow {
 		);
 
 		// This needs to happen first and save, otherwise the base location settings won't
- 		// have the latest dropdown options.
+		// have the latest dropdown options.
 		if ( args.sellingLocation ) {
 			settings.selectSellingLocation( args.sellingLocation );
 			settings.saveChanges();
