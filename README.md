@@ -14,6 +14,7 @@ npm install wc-page-objects
 ```
 
 ## Docs
+- [Setting up WooCommerce Core e2e tests](https://github.com/woocommerce/woocommerce/wiki/End-to-end-Testing)
 - [API](https://woocommerce.github.io/wc-e2e-page-objects/wc-e2e-page-objects/0.3.0/index.html)
 - [Tutorial](https://woocommerce.github.io/wc-e2e-page-objects/wc-e2e-page-objects/0.3.0/tutorial-overview.html)
 
