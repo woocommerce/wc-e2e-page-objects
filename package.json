@@ -39,7 +39,7 @@
   "homepage": "https://github.com/woocommerce/wc-e2e-page-objects",
   "dependencies": {
     "lodash": "^4.13.1",
-    "wp-e2e-page-objects": "0.7.0",
+    "wp-e2e-page-objects": "0.8.0",
     "wp-e2e-webdriver": "0.13.0"
   },
   "devDependencies": {
