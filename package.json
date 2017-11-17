@@ -40,7 +40,7 @@
   "dependencies": {
     "lodash": "^4.13.1",
     "wp-e2e-page-objects": "0.7.0",
-    "wp-e2e-webdriver": "0.11.0"
+    "wp-e2e-webdriver": "0.13.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
