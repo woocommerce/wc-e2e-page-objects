@@ -19,7 +19,7 @@ const assert = chai.assert;
 let manager;
 let driver;
 
-test.describe.only( 'My account page', function() {
+test.describe( 'My account page', function() {
 	const loginAsCustomer = () => {
 		return new CustomerFlow( driver, {
 			baseUrl: config.get( 'url' ),
