@@ -15,6 +15,7 @@ import SingleProductPage from './pages/single-product-page.js';
 import CartPage from './pages/cart-page';
 import CheckoutPage from './pages/checkout-page';
 import CheckoutOrderReceivedPage from './pages/checkout-order-received-page';
+import MyAccountPage from './pages/my-account-page';
 import ShopPage from './pages/shop-page';
 import WPAdminProductNew from './pages/wp-admin/wp-admin-product-new';
 import WPAdminWCSettings from './pages/wp-admin/wp-admin-wc-settings';
@@ -42,6 +43,7 @@ export {
 	CartPage,
 	CheckoutPage,
 	CheckoutOrderReceivedPage,
+	MyAccountPage,
 	ShopPage,
 	WPAdminProductNew,
 	WPAdminWCSettings,

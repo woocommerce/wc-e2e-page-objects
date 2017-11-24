@@ -28,6 +28,6 @@ export default class ComponentMyAccountMenu extends Component {
 	}
 
 	_getMenuXpathExpression( menu ) {
-		return `//nav[@class="woocommerce-MyAccount-navigation"]//li/a[contains(text(), "${ menu }")]]`;
+		return `//nav[@class="woocommerce-MyAccount-navigation"]//li/a[contains(text(), "${ menu }")]`;
 	}
 }
