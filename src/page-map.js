@@ -9,6 +9,7 @@ import { PageMap } from 'wp-e2e-page-objects';
 import ShopPage from './pages/shop-page';
 import CartPage from './pages/cart-page';
 import CheckoutPage from './pages/checkout-page';
+import MyAccountPage from './pages/my-account-page';
 import WPAdminProductEdit from './pages/wp-admin/wp-admin-product-edit';
 import WPAdminProductNew from './pages/wp-admin/wp-admin-product-new';
 import WPAdminProducts from './pages/wp-admin/wp-admin-products';
@@ -39,6 +40,10 @@ export const PAGE = Object.assign(
 		CHECKOUT: {
 			object: CheckoutPage,
 			path: '/checkout'
+		},
+		MY_ACCOUNT: {
+			object: MyAccountPage,
+			path: '/my-account'
 		},
 		WP_ADMIN_PRODUCTS: {
 			object: WPAdminProducts,
@@ -104,5 +109,5 @@ export const PAGE = Object.assign(
 );
 
 export function getPageUrl( baseUrl, page, ...args ) {
-	return PageMap.getPageUrl( baseUrl, page.path, ...args );
+	return PageMap.getPageUrl( baseUrl, page, ...args );
 }
