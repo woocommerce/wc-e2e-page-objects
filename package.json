@@ -14,7 +14,8 @@
     "preversion": "npm run clean && npm run lint && npm run test",
     "version": "npm run build && git add -A .",
     "postversion": "git push && git push --tags",
-    "docs:generate": "node_modules/.bin/jsdoc --configure .jsdoc.json --tutorials docs/tutorials --verbose"
+    "docs:generate": "node_modules/.bin/jsdoc --configure .jsdoc.json --tutorials docs/tutorials --verbose",
+    "update-deps": "npm run -s rm -- node_modules && npm run -s rm -- npm-shrinkwrap.json && npm install && npm shrinkwrap"
   },
   "files": [
     "lib",
