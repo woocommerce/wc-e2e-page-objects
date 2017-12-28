@@ -18,7 +18,7 @@ import CheckoutPage from './checkout-page';
 
 const CART_EMPTY_SELECTOR = By.css( '.cart-empty' );
 const RETURN_TO_SHOP_SELECTOR = By.css( '.return-to-shop' );
-const UPDATE_CART_SELECTOR = By.css( 'button[name="update_cart"]' );
+const UPDATE_CART_SELECTOR = By.css( '[name="update_cart"]' );
 const PROCEED_TO_CHECKOUT_SELECTOR = By.css( '.checkout-button' );
 
 const defaultArgs = {
