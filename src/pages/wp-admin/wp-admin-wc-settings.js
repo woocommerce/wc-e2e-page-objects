@@ -9,7 +9,7 @@ import { By } from 'selenium-webdriver';
 import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 import { WPAdminSettings } from 'wp-e2e-page-objects';
 
-const SAVE_CHANGES_SELECTOR = By.css( '.submit button[type="submit"]' );
+const SAVE_CHANGES_SELECTOR = By.css( '.submit [type="submit"]' );
 
 /**
  * A WooCommerce admin Settings screen
