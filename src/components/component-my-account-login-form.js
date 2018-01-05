@@ -8,7 +8,7 @@ import { Component } from 'wp-e2e-page-objects';
 const LOGIN_FORM_SELECTOR = By.css( '.woocommerce-form-login' );
 const USERNAME_FIELD_SELECTOR = By.css( '#username' );
 const PASSWORD_FIELD_SELECTOR = By.css( '#password' );
-const LOGIN_BUTTON_SELECTOR = By.css( 'button[name="login"]' );
+const LOGIN_BUTTON_SELECTOR = By.css( '[name="login"]' );
 
 /**
  * My account page login form component.

@@ -55,7 +55,7 @@ test.describe( 'My account page', function() {
 			visit: false
 		} );
 
-		assert.eventually.ok( myAccount.hasText( 'Hello Customer' ), 'see "Hello Customer" text' );
+		assert.eventually.ok( myAccount.hasText( 'Hello' ), 'see "Hello" text' );
 		assert.eventually.ok( myAccount.hasMenu( 'Dashboard' ), 'see Dashboard menu.' );
 		assert.eventually.ok( myAccount.hasMenu( 'Orders' ), 'see Orders menu' );
 	} );

@@ -49,6 +49,10 @@ test.describe( 'Add New Product Page', function() {
 		const panelGeneral = productData.clickTab( 'General' );
 		panelGeneral.setRegularPrice( '9.99' );
 
+		helper.scrollUp( driver );
+		helper.scrollUp( driver );
+		helper.scrollUp( driver );
+
 		product.publish();
 		assert.eventually.ok( product.hasNotice( 'Product published.' ) );
 
