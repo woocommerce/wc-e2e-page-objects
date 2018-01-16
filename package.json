@@ -1,6 +1,6 @@
 {
   "name": "wc-e2e-page-objects",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "WooCommerce Page Objects to be used on end-to-end tests with Selenium WebDriver",
   "main": "./lib/index.js",
   "scripts": {
