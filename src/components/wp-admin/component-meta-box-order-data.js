@@ -11,9 +11,9 @@ import { ComponentMetaBox } from 'wp-e2e-page-objects';
 import * as wcHelper from '../../helper';
 
 const METABOX_SELECTOR = By.css( '#woocommerce-order-data' );
-const ORDER_DATE_SELECTOR = By.css( '#order_date' );
-const ORDER_DATE_HOUR_SELECTOR = By.css( '#order_date_hour' );
-const ORDER_DATE_MINUTE_SELECTOR = By.css( '#order_date_minute' );
+const ORDER_DATE_SELECTOR = By.name( 'order_date' );
+const ORDER_DATE_HOUR_SELECTOR = By.name( 'order_date_hour' );
+const ORDER_DATE_MINUTE_SELECTOR = By.name( 'order_date_minute' );
 const ORDER_STATUS_SELECTOR = By.css( '.wc-order-status .select2-selection__arrow' );
 const CUSTOMER_SELECTOR = By.css( '.wc-customer-user .select2-selection__arrow' );
 
