@@ -12,7 +12,7 @@ import GuestCustomerFlow from './guest-customer-flow';
 const defaultArgs = {
 	baseUrl: 'http://example.com',
 	username: '',
-	password: ''
+	password: '',
 };
 
 export default class CustomerFlow extends GuestCustomerFlow {

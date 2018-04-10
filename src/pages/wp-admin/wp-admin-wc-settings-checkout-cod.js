@@ -26,7 +26,6 @@ const ENABLE_SELECTOR = By.css( '#woocommerce_cod_enabled' );
  * @extends WPAdminWCSettings
  */
 export default class WPAdminWCSettingsCheckoutCOD extends WPAdminWCSettings {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

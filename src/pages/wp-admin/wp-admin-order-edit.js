@@ -22,7 +22,6 @@ import ComponentMetaBoxOrderDownloads from '../../components/wp-admin/component-
  * @extends WPAdminPostEdit
  */
 export default class WPAdminOrderEdit extends WPAdminPostEdit {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.
@@ -36,7 +35,7 @@ export default class WPAdminOrderEdit extends WPAdminPostEdit {
 					metaBoxOrderActions: ComponentMetaBoxOrderActions,
 					metaBoxOrderNotes: ComponentMetaBoxOrderNotes,
 					metaBoxDownloadableProductPermissions: ComponentMetaBoxOrderDownloads,
-				}
+				},
 			},
 			args
 		);

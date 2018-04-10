@@ -20,8 +20,8 @@ const defaultArgs = {
 		orderDetails: ComponentOrderDetails,
 		customerDetails: ComponentOrderCustomerDetails,
 		billingAddress: ComponentOrderBillingAddress,
-		shippingAddress: ComponentOrderShippingAddress
-	}
+		shippingAddress: ComponentOrderShippingAddress,
+	},
 };
 
 /**

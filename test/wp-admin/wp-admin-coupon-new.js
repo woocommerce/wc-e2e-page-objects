@@ -35,7 +35,7 @@ test.describe( 'Add New Coupon Page', function() {
 		const flowArgs = {
 			baseUrl: config.get( 'url' ),
 			username: config.get( 'users.admin.username' ),
-			password: config.get( 'users.admin.password' )
+			password: config.get( 'users.admin.password' ),
 		};
 		const storeOwner = new StoreOwnerFlow( driver, flowArgs );
 

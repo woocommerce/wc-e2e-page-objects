@@ -18,7 +18,6 @@ import ComponentMetaBoxProductData from '../../components/wp-admin/component-met
  * @extends WPAdminPostEdit
  */
 export default class WPAdminProductEdit extends WPAdminPostEdit {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.
@@ -27,8 +26,8 @@ export default class WPAdminProductEdit extends WPAdminPostEdit {
 		args = Object.assign(
 			{
 				components: {
-					metaBoxProductData: ComponentMetaBoxProductData
-				}
+					metaBoxProductData: ComponentMetaBoxProductData,
+				},
 			},
 			args
 		);

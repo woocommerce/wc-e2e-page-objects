@@ -27,7 +27,6 @@ const CALC_DISCOUNTS_SEQUENTIALLY = By.css( '#calc_discounts_sequentially' );
  * @extends WPAdminWCSettings
  */
 export default class WPAdminWCSettingsCheckout extends WPAdminWCSettings {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

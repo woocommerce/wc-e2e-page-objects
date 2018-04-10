@@ -17,7 +17,6 @@ const SAVE_CHANGES_SELECTOR = By.css( '.submit [type="submit"]' );
  * @extends WPAdminSettings
  */
 export default class WPAdminWCSettings extends WPAdminSettings {
-
 	/**
 	 * @param {WebDriver} driver   - Instance of WebDriver.
 	 * @param {object}    args     - Configuration arguments.

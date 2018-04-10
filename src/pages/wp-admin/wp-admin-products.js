@@ -13,7 +13,6 @@ import { WPAdminPosts } from 'wp-e2e-page-objects';
  * @extends WPAdminPosts
  */
 export default class WPAdminProducts extends WPAdminPosts {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

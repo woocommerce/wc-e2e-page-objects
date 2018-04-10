@@ -22,7 +22,6 @@ const DESCRIPTION_SELECTOR = By.css( '#woocommerce-coupon-description' );
  * @extends WPAdminPostEdit
  */
 export default class WPAdminCouponEdit extends WPAdminPostEdit {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.
@@ -31,8 +30,8 @@ export default class WPAdminCouponEdit extends WPAdminPostEdit {
 		args = Object.assign(
 			{
 				components: {
-					metaBoxCouponData: ComponentMetaBoxCouponData
-				}
+					metaBoxCouponData: ComponentMetaBoxCouponData,
+				},
 			},
 			args
 		);
