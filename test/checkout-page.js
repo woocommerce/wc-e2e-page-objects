@@ -20,7 +20,7 @@ const PAGE = PageMap.PAGE;
 const storeOwnerFlowArgs = {
 	baseUrl: config.get( 'url' ),
 	username: config.get( 'users.admin.username' ),
-	password: config.get( 'users.admin.password' )
+	password: config.get( 'users.admin.password' ),
 };
 
 const assertOrderItem = ( orderReview, itemName, attrs ) => {

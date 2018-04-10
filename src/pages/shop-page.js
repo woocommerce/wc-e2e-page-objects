@@ -18,8 +18,8 @@ const defaultArgs = {
 	visit: true,
 	components: {
 		sorter: ComponentProductsSorter,
-		pagination: ComponentProductsPagination
-	}
+		pagination: ComponentProductsPagination,
+	},
 };
 
 /**
@@ -28,7 +28,6 @@ const defaultArgs = {
  * @extends Page
  */
 export default class ShopPage extends Page {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

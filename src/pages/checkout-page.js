@@ -20,8 +20,8 @@ const defaultArgs = {
 	components: {
 		billingDetails: ComponentCheckoutBillingDetails,
 		shippingDetails: ComponentCheckoutShippingDetails,
-		orderReview: ComponentCheckoutOrderReview
-	}
+		orderReview: ComponentCheckoutOrderReview,
+	},
 };
 
 const ORDER_NOTES_SELECTOR = By.css( '#order_comments' );
@@ -34,7 +34,6 @@ const PLACE_ORDER_SELECTOR = By.css( '#place_order' );
  * @extends Page
  */
 export default class CheckoutPage extends Page {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

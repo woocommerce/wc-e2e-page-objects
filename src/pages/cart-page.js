@@ -23,8 +23,8 @@ const PROCEED_TO_CHECKOUT_SELECTOR = By.css( '.checkout-button' );
 
 const defaultArgs = {
 	components: {
-		cartTotals: ComponentCartTotals
-	}
+		cartTotals: ComponentCartTotals,
+	},
 };
 
 /**
@@ -33,7 +33,6 @@ const defaultArgs = {
  * @extends Page
  */
 export default class CartPage extends Page {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

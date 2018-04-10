@@ -26,7 +26,6 @@ const ENABLE_SELECTOR = By.css( '#woocommerce_bacs_enabled' );
  * @extends WPAdminWCSettings
  */
 export default class WPAdminWCSettingsCheckoutBACS extends WPAdminWCSettings {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

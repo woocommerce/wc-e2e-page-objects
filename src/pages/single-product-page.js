@@ -13,7 +13,7 @@ const ADD_TO_CART_BUTTON_SELECTOR = By.css( 'button.single_add_to_cart_button' )
 const QUANTITY_SELECTOR = By.css( 'input[name="quantity"]' );
 
 const defaultArgs = {
-	visit: true
+	visit: true,
 };
 
 /**
@@ -22,7 +22,6 @@ const defaultArgs = {
  * @extends Page
  */
 export default class SingleProductPage extends Page {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

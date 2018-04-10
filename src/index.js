@@ -54,5 +54,5 @@ export {
 	WPAdminWCSettingsProductsGeneral,
 	StoreOwnerFlow,
 	GuestCustomerFlow,
-	CustomerFlow
+	CustomerFlow,
 };

@@ -24,12 +24,12 @@ test.describe( 'My account page', function() {
 		return new CustomerFlow( driver, {
 			baseUrl: config.get( 'url' ),
 			username: config.get( 'users.customer.username' ),
-			password: config.get( 'users.customer.password' )
+			password: config.get( 'users.customer.password' ),
 		} );
 	};
 	const getMyAccountSubPageUrl = path => {
 		return getPageUrl( config.get( 'url' ), {
-			path: '/my-account/%s'
+			path: '/my-account/%s',
 		}, path );
 	};
 	const untrailingslashit = url => {
@@ -52,7 +52,7 @@ test.describe( 'My account page', function() {
 		loginAsCustomer();
 		const myAccount = new MyAccountPage( driver, {
 			baseUrl: config.get( 'url' ),
-			visit: false
+			visit: false,
 		} );
 
 		assert.eventually.ok( myAccount.hasText( 'Hello' ), 'see "Hello" text' );
@@ -64,7 +64,7 @@ test.describe( 'My account page', function() {
 		loginAsCustomer();
 		const myAccount = new MyAccountPage( driver, {
 			baseUrl: config.get( 'url' ),
-			visit: false
+			visit: false,
 		} );
 		myAccount.clickMenu( 'Orders' );
 
@@ -79,7 +79,7 @@ test.describe( 'My account page', function() {
 		loginAsCustomer();
 		const myAccount = new MyAccountPage( driver, {
 			baseUrl: config.get( 'url' ),
-			visit: false
+			visit: false,
 		} );
 		myAccount.clickMenu( 'Downloads' );
 
@@ -94,7 +94,7 @@ test.describe( 'My account page', function() {
 		loginAsCustomer();
 		const myAccount = new MyAccountPage( driver, {
 			baseUrl: config.get( 'url' ),
-			visit: false
+			visit: false,
 		} );
 		myAccount.clickMenu( 'Addresses' );
 
@@ -109,7 +109,7 @@ test.describe( 'My account page', function() {
 		loginAsCustomer();
 		const myAccount = new MyAccountPage( driver, {
 			baseUrl: config.get( 'url' ),
-			visit: false
+			visit: false,
 		} );
 		myAccount.clickMenu( 'Account details' );
 

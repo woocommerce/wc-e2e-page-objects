@@ -41,7 +41,7 @@ function getRemoveExpression() {
 
 const defaultArgs = {
 	checkQty: true,
-	qty: 1
+	qty: 1,
 };
 
 export default class ComponentCartItem extends Component {

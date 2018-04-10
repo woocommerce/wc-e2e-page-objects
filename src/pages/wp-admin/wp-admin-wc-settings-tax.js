@@ -34,7 +34,6 @@ const defaultArgs = {
  * @extends WPAdminWCSettings
  */
 export default class WPAdminWCSettingsTax extends WPAdminWCSettings {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

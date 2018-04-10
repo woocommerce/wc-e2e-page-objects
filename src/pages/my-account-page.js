@@ -20,8 +20,8 @@ const defaultArgs = {
 	visit: true,
 	components: {
 		loginForm: ComponentMyAccountLoginForm,
-		menu: ComponentMyAccountMenu
-	}
+		menu: ComponentMyAccountMenu,
+	},
 };
 
 /**
@@ -30,7 +30,6 @@ const defaultArgs = {
  * @extends Page
  */
 export default class MyAccountPage extends Page {
-
 	/**
 	 * @param {WebDriver} driver   - Instance of WebDriver.
 	 * @param {object}    args     - Configuration arguments.

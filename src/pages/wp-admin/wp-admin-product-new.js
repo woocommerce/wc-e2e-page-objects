@@ -13,7 +13,6 @@ import WPAdminProductEdit from './wp-admin-product-edit';
  * @extends WPAdminProductEdit
  */
 export default class WPAdminProductNew extends WPAdminProductEdit {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

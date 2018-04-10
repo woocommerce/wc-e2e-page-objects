@@ -13,7 +13,6 @@ import WPAdminCouponEdit from './wp-admin-coupon-edit';
  * @extends WPAdminCouponEdit
  */
 export default class WPAdminCouponNew extends WPAdminCouponEdit {
-
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

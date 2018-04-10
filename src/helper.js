@@ -88,7 +88,7 @@ export function waitTillAlertAccepted( driver, waitMs = 10000 ) {
 export function getSelect2ToggleSelectorByName( name, args ) {
 	args = Object.assign(
 		{
-			multiple: false
+			multiple: false,
 		},
 		args
 	);
