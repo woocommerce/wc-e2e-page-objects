@@ -22,7 +22,7 @@ the what you expected to see and what happened instead.
 Before running the test, make sure to:
 
 * Set a test site with latest WP, WC, and Storefront.
-* Import the [dummy-data products](https://github.com/woocommerce/woocommerce/blob/master/dummy-data/dummy-products.csv)
+* Import the [sample products](https://github.com/woocommerce/woocommerce/blob/master/sample-data/sample_products.csv)
   from WC using WC products importer.
 * Create a `test/config/local-{env}.json`
 * Set your site's configuration there. For example if active environment is
