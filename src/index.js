@@ -27,6 +27,7 @@ import WPAdminWCSettingsProductsDownloadable from './pages/wp-admin/wp-admin-wc-
 import StoreOwnerFlow from './flows/store-owner-flow';
 import GuestCustomerFlow from './flows/guest-customer-flow';
 import CustomerFlow from './flows/customer-flow';
+import WPAdminWCSettingsProductsInventory from "./pages/wp-admin/wp-admin-wc-settings-products-inventory";
 
 export {
 	PageMap,
@@ -55,4 +56,5 @@ export {
 	StoreOwnerFlow,
 	GuestCustomerFlow,
 	CustomerFlow,
+	WPAdminWCSettingsProductsInventory,
 };
