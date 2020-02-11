@@ -7,12 +7,12 @@
  */
 import { By } from 'selenium-webdriver';
 import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
-import { WPAdminPostEdit } from 'wp-e2e-page-objects';
 
 /**
  * Internal dependencies
  */
 import ComponentMetaBoxCouponData from '../../components/wp-admin/component-meta-box-coupon-data';
+import WPAdminClassicPostEdit from './wp-admin-classic-post-edit';
 
 const DESCRIPTION_SELECTOR = By.css( '#woocommerce-coupon-description' );
 
@@ -21,7 +21,7 @@ const DESCRIPTION_SELECTOR = By.css( '#woocommerce-coupon-description' );
  *
  * @extends WPAdminPostEdit
  */
-export default class WPAdminCouponEdit extends WPAdminPostEdit {
+export default class WPAdminCouponEdit extends WPAdminClassicPostEdit {
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

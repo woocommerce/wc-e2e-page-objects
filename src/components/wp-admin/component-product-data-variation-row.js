@@ -125,12 +125,9 @@ export default class ComponentProductDataVariationRow extends Component {
 	}
 
 	toggle() {
-		wcHelper.waitTillAnimationFinished( this.driver );
-
-		this.driver.actions().
-			mouseMove( this.driver.findElement( By.css( this.selector.value + ' > h3 > .handlediv' ) ) ).
-			click().
-			perform();
+		// Force click hidden toggle button.
+		const element = this.driver.findElement( By.css( this.selector.value + ' > h3 > .handlediv' ) );
+		this.driver.executeScript( 'arguments[0].click();', element );
 
 		return helper.waitTillPresentAndDisplayed( this.driver, By.css( this.selector.value + ' .wc-metabox-content' ) );
 	}

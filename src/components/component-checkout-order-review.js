@@ -19,7 +19,7 @@ export default class ComponentCheckoutOrderReview extends ComponentCheckout {
 	hasItem( item, { qty = '1', total = '$0' } ) {
 		const selector = By.xpath(
 			'//tr[@class="cart_item" and ' +
-				`.//td[contains(., "${ item }") and contains(., "× ${ qty }")] and ` +
+				`.//td[contains(., "${ item }") and .//strong[contains(., "${ qty }")]] and ` +
 				`.//td[contains(., "${ total }")]` +
 			']'
 		);
