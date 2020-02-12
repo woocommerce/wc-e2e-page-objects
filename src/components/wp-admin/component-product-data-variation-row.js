@@ -4,7 +4,6 @@
 import { By } from 'selenium-webdriver';
 import { WebDriverHelper as helper } from 'wp-e2e-webdriver';
 import { Component } from 'wp-e2e-page-objects';
-import * as wcHelper from '../../helper';
 
 export default class ComponentProductDataVariationRow extends Component {
 	constructor( driver, selector ) {
