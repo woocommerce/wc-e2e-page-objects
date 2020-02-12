@@ -108,7 +108,7 @@ test.describe( 'Checkout Page', function() {
 		assert.eventually.ok( billingDetails.setZip( '94107' ) );
 	} );
 
-	test.it( 'allows customer to fill shipping details', () => {
+	test.xit( 'TODO(FIXME): allows customer to fill shipping details', () => {
 		const guest = new GuestCustomerFlow( driver, { baseUrl: config.get( 'url' ) } );
 		guest.fromShopAddProductsToCart( 'Beanie', 'Long Sleeve Tee' );
 
