@@ -2,7 +2,6 @@
  * @module WPAdminProductEdit
  */
 
-
 /**
  * Internal dependencies
  */

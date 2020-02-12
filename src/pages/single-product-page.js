@@ -69,7 +69,7 @@ export default class SingleProductPage extends Page {
 	* Get the xpath selector for selecting variations. (Internal use only)
 	*
  	* @param  {string}    attribute - The attribute to set for (e.g. 'Color').
- 	* @return {selector}
+ 	* @return {selector}  The new locator
 	*/
 	_getVariationDropdownSelector( attribute ) {
 		return By.xpath( '//label[contains(text(), "' + attribute + '")]/parent::*/parent::*//select' );

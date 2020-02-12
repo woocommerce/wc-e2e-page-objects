@@ -143,7 +143,10 @@ export default class WPAdminWCSettingsTax extends WPAdminWCSettings {
 		return this.driver.findElement( ADDITIONAL_TAX_CLASSES_SELECTOR ).then(
 			function( element ) {
 				return element.getAttribute( 'value' ).then( ( elValue ) => {
-					return helper.setWhenSettable( driver, ADDITIONAL_TAX_CLASSES_SELECTOR, elValue.replace( new RegExp( `${ value }\n?` ), '' ) );
+					return helper.setWhenSettable(
+						driver,
+						ADDITIONAL_TAX_CLASSES_SELECTOR,
+						elValue.replace( new RegExp( `${ value }\n?` ), '' ));
 				} );
 			},
 			function() {
