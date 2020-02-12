@@ -51,14 +51,14 @@ test.describe( 'Single Product Page', function() {
 		let variableProductPage;
 
 		variableProductPage = visitProductByPath( '/product/hoodie' );
-		variableProductPage.selectVariation( 'color', 'Blue' );
+		variableProductPage.selectVariation( 'Color', 'Blue' );
 		variableProductPage.selectVariation( 'Logo', 'Yes' );
 		driver.sleep( 500 );
 		variableProductPage.addToCart();
 		assert.eventually.ok( visitCart().hasItem( 'Hoodie - Blue, Yes' ), '"Hoodie - Blue, Yes" in the cart' );
 
 		variableProductPage = visitProductByPath( '/product/hoodie' );
-		variableProductPage.selectVariation( 'color', 'Green' );
+		variableProductPage.selectVariation( 'Color', 'Green' );
 		variableProductPage.selectVariation( 'Logo', 'No' );
 		driver.sleep( 500 );
 		variableProductPage.addToCart();

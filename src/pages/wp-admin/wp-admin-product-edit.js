@@ -2,22 +2,19 @@
  * @module WPAdminProductEdit
  */
 
-/**
- * External dependencies
- */
-import { WPAdminPostEdit } from 'wp-e2e-page-objects';
 
 /**
  * Internal dependencies
  */
 import ComponentMetaBoxProductData from '../../components/wp-admin/component-meta-box-product-data';
+import WPAdminClassicPostEdit from './wp-admin-classic-post-edit';
 
 /**
  * The admin Edit Product screen
  *
  * @extends WPAdminPostEdit
  */
-export default class WPAdminProductEdit extends WPAdminPostEdit {
+export default class WPAdminProductEdit extends WPAdminClassicPostEdit {
 	/**
  	* @param {WebDriver} driver   - Instance of WebDriver.
  	* @param {object}    args     - Configuration arguments.

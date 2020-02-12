@@ -76,7 +76,27 @@ export default class WPAdminWCSettingsGeneral extends WPAdminWCSettings {
  	* @return {Promise}   Promise that evaluates to `true` if specified country selected successfully, `false` otherwise.
 	*/
 	setSellToSpecificCountries( keyword, exactOption ) {
-		return wcHelper.setSelect2WithSearch( this.driver, SELL_TO_SPECIFIC_COUNTRIES_SELECTOR, keyword, exactOption );
+		helper.waitTillPresentAndDisplayed( this.driver, SELL_TO_SPECIFIC_COUNTRIES_SELECTOR );
+		helper.clickWhenClickable( this.driver, SELL_TO_SPECIFIC_COUNTRIES_SELECTOR );
+
+		// Wait till search results visible before typing the keyword.
+		helper.waitTillPresentAndDisplayed( this.driver, By.css( '.select2-results' ) );
+
+		const searchSelector = By.css( '.select2-container--open input.select2-search__field' );
+		helper.setWhenSettable( this.driver, searchSelector, keyword );
+
+		const optionSelector = By.xpath( `//li[contains(@class, "select2-results__option") and matches(.,"${ exactOption }")]` );
+
+		// Make it doesn't trigger error when element is not found.
+		return this.driver.findElement( optionSelector ).then( ( el ) => {
+			return el.click().then( () => {
+				return true;
+			}, () => {
+				return false;
+			} );
+		}, () => {
+			return false;
+		} );
 	}
 
 	/**
